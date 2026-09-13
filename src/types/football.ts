@@ -61,6 +61,7 @@ export interface PlayerEditionPerformance {
   secondaryPositions: Position[];
 
   overall: number;
+  isLegend?: boolean;
 
   pace: number;
   shooting: number;

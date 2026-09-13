@@ -203,6 +203,7 @@ export function loadAllJsonHistoricalTeams(): HistoricalTeamEdition[] {
         position: primaryPos,
         secondaryPositions: secondaryPos,
         overall: p.force || 75,
+        isLegend: p.legend === true,
         ...attrs,
         appearances: Math.floor(Math.random() * 4) + 3,
         goals: p.positions?.includes('CA') || p.positions?.includes('PD') || p.positions?.includes('PE') ? Math.floor(Math.random() * 4) : 0,

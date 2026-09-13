@@ -21,7 +21,7 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
   onDragStartPlayer,
   onDragEndPlayer,
 }) => {
-  const has88PlusPlayer = squad.some(p => p.overall >= 88);
+  const hasLegendPlayer = squad.some(p => p.isLegend === true);
 
   return (
     <div className="flex-1 flex flex-col min-h-0 fx-panel p-4 overflow-hidden shadow-2xl">
@@ -29,10 +29,10 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
         <span className="text-xs fx-display font-extrabold tracking-widest text-white/70 uppercase">
           Pick One Player
         </span>
-        {has88PlusPlayer && (
+        {hasLegendPlayer && (
           <span className="text-[10px] fx-display font-bold text-[#F2B705] flex items-center gap-1 bg-[#F2B705]/10 px-2 py-0.5 rounded border border-[#F2B705]/25">
             <Crown className="w-3 h-3 fill-[#F2B705]" />
-            <span>Gold = 88+ OVR</span>
+            <span>Gold = Legend</span>
           </span>
         )}
       </div>
@@ -41,7 +41,7 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
         {squad.map((player, idx) => {
           const availability = evaluatePlayerSlotAvailability(player, slots, draftedIds);
           const isAvailable = availability === 'AVAILABLE';
-          const isGold = player.overall >= 88;
+          const isGold = Boolean(player.isLegend);
           const displayName = formatPlayerName(player.name, player.playerId);
 
           // 4 Distinct Visual States
@@ -94,7 +94,7 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
                     </span>
                     {isGold && (
                       <span className={`px-1.5 py-0.2 rounded text-[9px] fx-display font-black tracking-wider uppercase border flex items-center gap-0.5 ${badgeStyle}`}>
-                        <Crown className="w-2.5 h-2.5 fill-current" /> 88+
+                        <Crown className="w-2.5 h-2.5 fill-current" /> LEGEND
                       </span>
                     )}
                   </div>
