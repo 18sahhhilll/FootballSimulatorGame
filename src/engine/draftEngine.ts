@@ -7,7 +7,7 @@ import {
   PlayerSlotAvailabilityState,
   DraftSlot 
 } from '../types/football';
-import { getHistoricalTeamEditions } from '../data/historicalTeams';
+import { loadAllJsonHistoricalTeams } from '../data/jsonLoader';
 import { getPositionGroup } from './ratingEngine';
 
 export const FORMATION_CONFIGS: Record<FormationId, FormationSlotConfig[]> = {
@@ -106,7 +106,7 @@ export function isPlayerPositionCompatible(playerPos: Position, secondaryPos: Po
 
 // Position-INDEPENDENT Team Spin Engine
 export function getRandomHistoricalTeamForSpin(): { selectedTeam: HistoricalTeamEdition; candidates: HistoricalTeamEdition[] } {
-  const allTeams = getHistoricalTeamEditions();
+  const allTeams = loadAllJsonHistoricalTeams();
   const selectedTeam = allTeams[Math.floor(Math.random() * allTeams.length)];
 
   // Generate roulette reel items
