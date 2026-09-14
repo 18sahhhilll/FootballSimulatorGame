@@ -96,6 +96,11 @@ export interface FormationSlotConfig {
   y: number; // % from top
 }
 
+export interface ActiveSelectedPlayer {
+  player: PlayerEditionPerformance;
+  fromSlotId: string | null; // null if from drawn pool, slotId string if placed on pitch
+}
+
 export interface DraftSlot {
   slotConfig: FormationSlotConfig;
   assignedPerformance?: PlayerEditionPerformance;

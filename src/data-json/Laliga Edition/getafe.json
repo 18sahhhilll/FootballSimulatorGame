@@ -1,0 +1,320 @@
+{
+  "sel": "GET",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "david-soria",
+      "name": "David Soria",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "jiri-letacek",
+      "name": "Letáček",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "diego-ferrer",
+      "name": "Ferrer",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 25,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "djordjije-medenica",
+      "name": "Medenica",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 30,
+      "force": 62,
+      "legend": false
+    },
+    {
+      "playerId": "jorge-benito",
+      "name": "Benito",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 35,
+      "force": 62,
+      "legend": false
+    },
+    {
+      "playerId": "djene-dakonam",
+      "name": "Djené",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG",
+        "LD"
+      ],
+      "number": 2,
+      "force": 78,
+      "legend": true
+    },
+    {
+      "playerId": "davinci",
+      "name": "Davinchi",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 3,
+      "force": 68,
+      "legend": false
+    },
+    {
+      "playerId": "saba-sazonov",
+      "name": "Sazonov",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "abdel-abqar",
+      "name": "Abqar",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "sebastian-boselli",
+      "name": "Boselli",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 6,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "kiko-femenia",
+      "name": "Kiko Femenía",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 12,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "andres-garcia",
+      "name": "Andrés García",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 15,
+      "force": 70,
+      "legend": false
+    },
+    {
+      "playerId": "johan-mojica",
+      "name": "Mojica",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 16,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "zaid-romero",
+      "name": "Zaid Romero",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 20,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "jean-ives-valou",
+      "name": "Valou",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 27,
+      "force": 67,
+      "legend": false
+    },
+    {
+      "playerId": "mario-martin",
+      "name": "Mario Martín",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "nemanja-gudelj",
+      "name": "Gudelj",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI",
+        "ZAG"
+      ],
+      "number": 14,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "ramon-terrats",
+      "name": "Terrats",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 17,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "francho-gracia",
+      "name": "Francho",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 18,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "orel-mangala",
+      "name": "Mangala",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 21,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "alberto-risco",
+      "name": "Risco",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 28,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "borja-mayoral",
+      "name": "Mayoral",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "martin-satriano",
+      "name": "Satriano",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 11,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "enes-unal",
+      "name": "Enes Ünal",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 19,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "ivan-monzon",
+      "name": "Monzón",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 29,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "marcos-pachon",
+      "name": "Pachón",
+      "sel": "GET",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 31,
+      "force": 63,
+      "legend": false
+    }
+  ]
+}

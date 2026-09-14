@@ -2,12 +2,13 @@ import React from 'react';
 import { PlayerEditionPerformance, DraftSlot } from '../../types/football';
 import { evaluatePlayerSlotAvailability } from '../../engine/draftEngine';
 import { formatPlayerName } from '../../utils/formatters';
-import { Crown, GripVertical } from 'lucide-react';
+import { Crown, GripVertical, Sparkles } from 'lucide-react';
 
 interface InlineSquadPickerProps {
   squad: PlayerEditionPerformance[];
   slots: DraftSlot[];
   draftedIds: string[];
+  selectedPlayerId?: string | null;
   onSelectPlayer: (player: PlayerEditionPerformance) => void;
   onDragStartPlayer?: (player: PlayerEditionPerformance) => void;
   onDragEndPlayer?: () => void;
@@ -17,11 +18,20 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
   squad,
   slots,
   draftedIds,
+  selectedPlayerId,
   onSelectPlayer,
   onDragStartPlayer,
   onDragEndPlayer,
 }) => {
   const hasLegendPlayer = squad.some(p => p.isLegend === true);
+
+  const sortedSquad = [...squad].sort((a, b) => {
+    const availA = evaluatePlayerSlotAvailability(a, slots, draftedIds) === 'AVAILABLE';
+    const availB = evaluatePlayerSlotAvailability(b, slots, draftedIds) === 'AVAILABLE';
+    if (availA && !availB) return -1;
+    if (!availA && availB) return 1;
+    return b.overall - a.overall;
+  });
 
   return (
     <div className="flex-1 flex flex-col min-h-0 fx-panel p-4 overflow-hidden shadow-2xl">
@@ -38,19 +48,24 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
       </div>
 
       <div className="flex-1 overflow-y-auto space-y-2 pr-1 fx-scroll">
-        {squad.map((player, idx) => {
+        {sortedSquad.map((player, idx) => {
           const availability = evaluatePlayerSlotAvailability(player, slots, draftedIds);
           const isAvailable = availability === 'AVAILABLE';
+          const isSelected = selectedPlayerId === player.id;
           const isGold = Boolean(player.isLegend);
           const displayName = formatPlayerName(player.name, player.playerId);
 
-          // 4 Distinct Visual States
+          // Visual Card States
           let cardStyle = '';
           let nameStyle = '';
           let badgeStyle = '';
 
-          if (isGold && isAvailable) {
-            cardStyle = 'bg-gradient-to-r from-[#F2B705]/25 via-[#F2B705]/15 to-transparent border-[#F2B705] shadow-[#F2B705]/20 shadow-md cursor-grab active:cursor-grabbing hover:brightness-110';
+          if (isSelected) {
+            cardStyle = 'bg-cyan-950/60 border-cyan-400 ring-2 ring-cyan-400 shadow-lg shadow-cyan-500/30 scale-[1.01] cursor-pointer';
+            nameStyle = 'text-cyan-300 font-black';
+            badgeStyle = 'bg-cyan-400 text-black border-cyan-400';
+          } else if (isGold && isAvailable) {
+            cardStyle = 'bg-gradient-to-r from-[#F2B705]/25 via-[#F2B705]/15 to-transparent border-[#F2B705] shadow-[#F2B705]/20 shadow-md cursor-pointer hover:brightness-110';
             nameStyle = 'text-white font-extrabold';
             badgeStyle = 'bg-[#F2B705]/30 text-[#F2B705] border-[#F2B705]';
           } else if (isGold && !isAvailable) {
@@ -58,7 +73,7 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
             nameStyle = 'text-slate-400 font-semibold';
             badgeStyle = 'bg-[#F2B705]/10 text-[#F2B705]/50 border-[#F2B705]/20';
           } else if (!isGold && isAvailable) {
-            cardStyle = 'bg-white/5 border-white/15 hover:border-[#C9F31D] hover:bg-white/10 cursor-grab active:cursor-grabbing hover:shadow-md';
+            cardStyle = 'bg-white/5 border-white/15 hover:border-[#C9F31D] hover:bg-white/10 cursor-pointer hover:shadow-md';
             nameStyle = 'text-white font-bold';
             badgeStyle = '';
           } else {
@@ -70,13 +85,6 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
           return (
             <div
               key={player.id || idx}
-              draggable={isAvailable}
-              onDragStart={(e) => {
-                if (!isAvailable) return;
-                e.dataTransfer.setData('application/json', JSON.stringify({ player, fromSlotId: null }));
-                onDragStartPlayer?.(player);
-              }}
-              onDragEnd={() => onDragEndPlayer?.()}
               onClick={() => isAvailable && onSelectPlayer(player)}
               className={`flex items-center justify-between p-2.5 rounded border transition-all duration-150 relative select-none ${cardStyle}`}
             >
@@ -84,15 +92,20 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
                 {isAvailable && (
                   <GripVertical className="w-4 h-4 text-white/40 shrink-0" />
                 )}
-                <span className={`text-xs font-mono font-bold w-5 ${isGold ? (isAvailable ? 'text-[#F2B705]' : 'text-[#F2B705]/50') : 'text-white/40'}`}>
+                <span className={`text-xs font-mono font-bold w-5 ${isSelected ? 'text-cyan-300' : isGold ? (isAvailable ? 'text-[#F2B705]' : 'text-[#F2B705]/50') : 'text-white/40'}`}>
                   #{idx + 1}
                 </span>
                 <div className="truncate">
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-1.5 flex-wrap">
                     <span className={`fx-display text-sm truncate ${nameStyle}`}>
                       {displayName}
                     </span>
-                    {isGold && (
+                    {isSelected && (
+                      <span className="px-1.5 py-0.2 rounded text-[9px] fx-display font-black tracking-wider uppercase bg-cyan-400 text-black border border-cyan-400 flex items-center gap-0.5">
+                        <Sparkles className="w-2.5 h-2.5" /> SELECTED
+                      </span>
+                    )}
+                    {isGold && !isSelected && (
                       <span className={`px-1.5 py-0.2 rounded text-[9px] fx-display font-black tracking-wider uppercase border flex items-center gap-0.5 ${badgeStyle}`}>
                         <Crown className="w-2.5 h-2.5 fill-current" /> LEGEND
                       </span>
@@ -102,6 +115,11 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
                     {player.position}
                     {player.secondaryPositions && player.secondaryPositions.length > 0 && ` / ${player.secondaryPositions.join(', ')}`}
                   </div>
+                  {isSelected && (
+                    <div className="text-[10px] font-extrabold text-cyan-300 animate-pulse mt-0.5">
+                      Select position on pitch →
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -109,7 +127,7 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
                 <span className="text-xs fx-display font-bold text-white/40 uppercase">
                   {player.position}
                 </span>
-                <span className={`text-lg fx-display font-black font-mono ${isGold ? (isAvailable ? 'text-[#F2B705]' : 'text-[#F2B705]/60') : 'text-white'}`}>
+                <span className={`text-lg fx-display font-black font-mono ${isSelected ? 'text-cyan-300' : isGold ? (isAvailable ? 'text-[#F2B705]' : 'text-[#F2B705]/60') : 'text-white'}`}>
                   {player.overall}
                 </span>
               </div>

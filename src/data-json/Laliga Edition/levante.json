@@ -1,0 +1,307 @@
+{
+  "sel": "LEV",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "pablo-cunat",
+      "name": "Cuñat",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "mathew-ryan",
+      "name": "Mat Ryan",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "alex-primo",
+      "name": "Primo",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 25,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "aissa-mandi",
+      "name": "Mandi",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "ifeanyi-ndukwe",
+      "name": "Ndukwe",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 69,
+      "legend": false
+    },
+    {
+      "playerId": "dela",
+      "name": "Dela",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 6,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "jorge-cabello",
+      "name": "Cabello",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 14,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "victor-garcia",
+      "name": "Víctor García",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 2,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "jeremy-toljan",
+      "name": "Toljan",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 12,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "manu-sanchez",
+      "name": "Manu Sánchez",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 3,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "nacho-perez",
+      "name": "Nacho Pérez",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 27,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "marc-santos",
+      "name": "Santos",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 28,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "hugo-sotelo",
+      "name": "Sotelo",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "dani-requena",
+      "name": "Requena",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 15,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "jon-ander-olasagasti",
+      "name": "Olasagasti",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 16,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "axel-tape",
+      "name": "Axel Tapé",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 18,
+      "force": 70,
+      "legend": false
+    },
+    {
+      "playerId": "enzo-bardeli",
+      "name": "Bardeli",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 20,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "oriol-rey",
+      "name": "Oriol Rey",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 21,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "thiago-fernandez",
+      "name": "Thiago Fdez",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "MEI",
+        "PE"
+      ],
+      "number": 24,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "paco-cortes",
+      "name": "Paco Cortés",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 29,
+      "force": 67,
+      "legend": false
+    },
+    {
+      "playerId": "roger-brugue",
+      "name": "Brugué",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 7,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "ivan-romero",
+      "name": "Iván Romero",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "petar-ratkov",
+      "name": "Ratkov",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 11,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "yanis-musuayi",
+      "name": "Musuayi",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 19,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "etta-eyong",
+      "name": "Etta Eyong",
+      "sel": "LEV",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 22,
+      "force": 72,
+      "legend": false
+    }
+  ]
+}

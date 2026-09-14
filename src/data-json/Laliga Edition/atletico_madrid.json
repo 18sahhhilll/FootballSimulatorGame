@@ -1,0 +1,40 @@
+{
+  "sel": "ATM",
+  "copa": "2026-27",
+  "squad": [
+    {"playerId": "jan-oblak", "name": "Oblak", "sel": "ATM", "copa": "2026-27", "positions": ["GOL"], "number": 13, "force": 87, "legend": false},
+    {"playerId": "juan-musso", "name": "Musso", "sel": "ATM", "copa": "2026-27", "positions": ["GOL"], "number": 1, "force": 80, "legend": false},
+    {"playerId": "mario-de-luis", "name": "Mario de Luis", "sel": "ATM", "copa": "2026-27", "positions": ["GOL"], "number": 33, "force": 65, "legend": false},
+    {"playerId": "salvi-esquivel", "name": "Salvi Esquivel", "sel": "ATM", "copa": "2026-27", "positions": ["GOL"], "number": 31, "force": 62, "legend": false},
+
+    {"playerId": "cristian-romero", "name": "C. Romero", "sel": "ATM", "copa": "2026-27", "positions": ["ZAG"], "number": 21, "force": 86, "legend": false},
+    {"playerId": "robin-le-normand", "name": "Le Normand", "sel": "ATM", "copa": "2026-27", "positions": ["ZAG"], "number": 24, "force": 83, "legend": false},
+    {"playerId": "david-hancko", "name": "Hancko", "sel": "ATM", "copa": "2026-27", "positions": ["ZAG", "LE"], "number": 17, "force": 84, "legend": false},
+    {"playerId": "alex-grimaldo", "name": "Grimaldo", "sel": "ATM", "copa": "2026-27", "positions": ["LE"], "number": null, "force": 84, "legend": false},
+    {"playerId": "marc-pubill", "name": "Pubill", "sel": "ATM", "copa": "2026-27", "positions": ["LD"], "number": 18, "force": 79, "legend": false},
+    {"playerId": "marcos-llorente", "name": "Llorente", "sel": "ATM", "copa": "2026-27", "positions": ["LD", "MD"], "number": 14, "force": 83, "legend": false},
+    {"playerId": "daniel-martinez", "name": "D. Martínez", "sel": "ATM", "copa": "2026-27", "positions": ["ZAG"], "number": 30, "force": 71, "legend": false},
+    {"playerId": "jorge-dominguez", "name": "Jorge Domínguez", "sel": "ATM", "copa": "2026-27", "positions": ["ZAG"], "number": null, "force": 62, "legend": false},
+    {"playerId": "aleksa-puric", "name": "Puric", "sel": "ATM", "copa": "2026-27", "positions": ["LD"], "number": 40, "force": 65, "legend": false},
+
+    {"playerId": "koke", "name": "Koke", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": 6, "force": 82, "legend": true},
+    {"playerId": "pablo-barrios", "name": "Barrios", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": 8, "force": 83, "legend": false},
+    {"playerId": "johnny-cardoso", "name": "J. Cardoso", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": 5, "force": 81, "legend": false},
+    {"playerId": "morten-hjulmand", "name": "Hjulmand", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": null, "force": 83, "legend": false},
+    {"playerId": "kang-in-lee", "name": "Kang-in Lee", "sel": "ATM", "copa": "2026-27", "positions": ["MEI", "MD"], "number": null, "force": 83, "legend": false},
+    {"playerId": "obed-vargas", "name": "Obed Vargas", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": 3, "force": 72, "legend": false},
+    {"playerId": "rodrigo-mendoza", "name": "Rodrigo Mendoza", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": 4, "force": 64, "legend": false},
+    {"playerId": "jorge-castillo", "name": "Jorge Castillo", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": null, "force": 63, "legend": false},
+    {"playerId": "issiaka-kamate", "name": "Kamate", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": null, "force": 68, "legend": false},
+    {"playerId": "taufik", "name": "Taufik", "sel": "ATM", "copa": "2026-27", "positions": ["MEI"], "number": 28, "force": 62, "legend": false},
+
+    {"playerId": "julian-alvarez", "name": "J. Álvarez", "sel": "ATM", "copa": "2026-27", "positions": ["CA", "PE"], "number": 19, "force": 90, "legend": false},
+    {"playerId": "alex-baena", "name": "Baena", "sel": "ATM", "copa": "2026-27", "positions": ["PE", "MEI"], "number": 10, "force": 85, "legend": false},
+    {"playerId": "ademola-lookman", "name": "Lookman", "sel": "ATM", "copa": "2026-27", "positions": ["PE", "PD"], "number": 22, "force": 85, "legend": false},
+    {"playerId": "alexander-sorloth", "name": "Sørloth", "sel": "ATM", "copa": "2026-27", "positions": ["CA"], "number": 9, "force": 84, "legend": false},
+    {"playerId": "giuliano-simeone", "name": "G. Simeone", "sel": "ATM", "copa": "2026-27", "positions": ["PE", "PD"], "number": 20, "force": 78, "legend": false},
+    {"playerId": "jonathan-david", "name": "J. David", "sel": "ATM", "copa": "2026-27", "positions": ["CA"], "number": null, "force": 82, "legend": false},
+    {"playerId": "arnau-ortiz", "name": "Arnau Ortiz", "sel": "ATM", "copa": "2026-27", "positions": ["CA"], "number": null, "force": 66, "legend": false},
+    {"playerId": "miguel-cubo", "name": "Miguel Cubo", "sel": "ATM", "copa": "2026-27", "positions": ["CA"], "number": 61, "force": 62, "legend": false}
+  ]
+}

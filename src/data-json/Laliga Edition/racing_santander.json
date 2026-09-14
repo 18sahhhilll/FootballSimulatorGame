@@ -1,0 +1,299 @@
+{
+  "sel": "RAC",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "julen-agirrezabala",
+      "name": "Agirrezabala",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "simon-eriksson",
+      "name": "Eriksson",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 68,
+      "legend": false
+    },
+    {
+      "playerId": "jokin-ezkieta",
+      "name": "Ezkieta",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 25,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "facundo-gonzalez",
+      "name": "F. González",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "pablo-ramon",
+      "name": "Pablo Ramón",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG",
+        "LD"
+      ],
+      "number": 5,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "juan-gutierrez",
+      "name": "Juan Gtz",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 6,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "manu-hernando",
+      "name": "Manu Hernando",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 15,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "pol-moreno",
+      "name": "Pol Moreno",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 18,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "saul-garcia",
+      "name": "Saúl García",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 3,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "alvaro-mantilla",
+      "name": "Mantilla",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "LD",
+        "ZAG"
+      ],
+      "number": 2,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "jeanucl-belocian",
+      "name": "Belocian",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "LE",
+        "ZAG"
+      ],
+      "number": 12,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "aaron-martin",
+      "name": "Aarón Martín",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 20,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "andre-almeida",
+      "name": "André Almeida",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "pablo-garcia",
+      "name": "Pablo García",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 14,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "aritz-aldasoro",
+      "name": "Aldasoro",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 16,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "unai-vencedor",
+      "name": "Vencedor",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 21,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "inigo-vicente",
+      "name": "Íñigo Vicente",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "MEI"
+      ],
+      "number": 10,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "sergio-ruiz",
+      "name": "Sergio Ruiz",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 22,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "pedro-rodriguez",
+      "name": "Pedro R.",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 26,
+      "force": 67,
+      "legend": false
+    },
+    {
+      "playerId": "sergio-canales",
+      "name": "Canales",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 7,
+      "force": 79,
+      "legend": true
+    },
+    {
+      "playerId": "peque-fernandez",
+      "name": "Peque",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI",
+        "PE"
+      ],
+      "number": 17,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "asier-villalibre",
+      "name": "Villalibre",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "juanca-arana",
+      "name": "Arana",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 19,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "jeremy-arevalo",
+      "name": "Arévalo",
+      "sel": "RAC",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 27,
+      "force": 67,
+      "legend": false
+    }
+  ]
+}

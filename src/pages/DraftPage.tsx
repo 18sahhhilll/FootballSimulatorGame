@@ -4,7 +4,8 @@ import {
   DraftSlot, 
   PlayerEditionPerformance, 
   UserSquad,
-  HistoricalTeamEdition 
+  HistoricalTeamEdition,
+  ActiveSelectedPlayer
 } from '../types/football';
 import { COMPETITION_EDITIONS } from '../data/editions';
 import { 
@@ -48,8 +49,9 @@ export const DraftPage: React.FC<DraftPageProps> = ({
   const [hasEverSpun, setHasEverSpun] = useState<boolean>(false);
   const [rerollsLeft, setRerollsLeft] = useState<number>(3);
 
-  // Drag & drop state
-  const [draggedPlayer, setDraggedPlayer] = useState<PlayerEditionPerformance | null>(null);
+  // Position placement states
+  const [selectedPlacement, setSelectedPlacement] = useState<ActiveSelectedPlayer | null>(null);
+  const [drawnSquadPool, setDrawnSquadPool] = useState<PlayerEditionPerformance[]>([]);
 
   // Initialize formation slots when formation changes
   useEffect(() => {
@@ -73,12 +75,19 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     if (isSpinning) return;
     setIsSpinning(true);
     setHasEverSpun(true);
+    setSelectedPlacement(null);
 
     setTimeout(() => {
       const { selectedTeam } = getRandomHistoricalTeamForSpin();
       setSpunTeam(selectedTeam);
       setIsSpinning(false);
       setHasSpun(true);
+
+      setDrawnSquadPool(prevPool => {
+        const existingIds = new Set(prevPool.map(p => p.id));
+        const newPlayers = selectedTeam.squad.filter(p => !existingIds.has(p.id));
+        return [...prevPool, ...newPlayers];
+      });
     }, 450);
   };
 
@@ -86,6 +95,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
   const handleRerollCountry = () => {
     if (rerollsLeft <= 0 || isSpinning || !spunTeam) return;
     setIsSpinning(true);
+    setSelectedPlacement(null);
 
     setTimeout(() => {
       const allTeams = loadAllJsonHistoricalTeams();
@@ -98,6 +108,12 @@ export const DraftPage: React.FC<DraftPageProps> = ({
       setSpunTeam(nextTeam);
       setIsSpinning(false);
       setRerollsLeft(prev => prev - 1);
+
+      setDrawnSquadPool(prevPool => {
+        const existingIds = new Set(prevPool.map(p => p.id));
+        const newPlayers = nextTeam.squad.filter(p => !existingIds.has(p.id));
+        return [...prevPool, ...newPlayers];
+      });
     }, 350);
   };
 
@@ -105,6 +121,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
   const handleRerollWorldCup = () => {
     if (rerollsLeft <= 0 || isSpinning || !spunTeam) return;
     setIsSpinning(true);
+    setSelectedPlacement(null);
 
     setTimeout(() => {
       const allTeams = loadAllJsonHistoricalTeams();
@@ -117,42 +134,95 @@ export const DraftPage: React.FC<DraftPageProps> = ({
       setSpunTeam(nextTeam);
       setIsSpinning(false);
       setRerollsLeft(prev => prev - 1);
+
+      setDrawnSquadPool(prevPool => {
+        const existingIds = new Set(prevPool.map(p => p.id));
+        const newPlayers = nextTeam.squad.filter(p => !existingIds.has(p.id));
+        return [...prevPool, ...newPlayers];
+      });
     }, 350);
   };
 
-  // Click-to-pick player handler
-  const handlePickPlayer = (perf: PlayerEditionPerformance) => {
-    const targetSlot = findBestSlotForPlayer(perf, slots);
-    if (!targetSlot) return;
-
-    handleAssignPlayerToSlot(perf, targetSlot.slotConfig.id, null);
-    // Auto switch to pitch on mobile after picking player
-    setMobileTab('PITCH');
+  // Click-to-select UNPLACED player from drawn squad pool
+  const handlePickUnplacedPlayer = (perf: PlayerEditionPerformance) => {
+    if (selectedPlacement?.player.id === perf.id) {
+      setSelectedPlacement(null); // Tapping 2nd time deselects
+    } else {
+      setSelectedPlacement({ player: perf, fromSlotId: null });
+      setMobileTab('PITCH');
+    }
   };
 
-  // Core Assign & Drag-Drop Slot Handler
-  const handleAssignPlayerToSlot = (
+  // Click-to-select ALREADY-PLACED player on pitch
+  const handlePickPlacedPlayer = (perf: PlayerEditionPerformance, slotId: string) => {
+    if (selectedPlacement?.player.id === perf.id) {
+      setSelectedPlacement(null); // Tapping 2nd time deselects
+    } else {
+      setSelectedPlacement({ player: perf, fromSlotId: slotId });
+    }
+  };
+
+  // Handle slot click on pitch
+  const handleSelectSlot = (targetSlotId: string) => {
+    setActiveSlotId(targetSlotId);
+
+    const targetSlot = slots.find(s => s.slotConfig.id === targetSlotId);
+    if (!targetSlot) return;
+
+    if (!selectedPlacement) {
+      // If no player currently selected: tapping an occupied pitch slot selects that placed player!
+      if (targetSlot.assignedPerformance) {
+        setSelectedPlacement({ player: targetSlot.assignedPerformance, fromSlotId: targetSlotId });
+      }
+      return;
+    }
+
+    const { player: selectedPlayer, fromSlotId } = selectedPlacement;
+
+    // Tapping the exact same slot where the selected player already is -> deselect
+    if (fromSlotId === targetSlotId) {
+      setSelectedPlacement(null);
+      return;
+    }
+
+    // STRICT RULE: Placement is restricted exclusively to EMPTY slots (no swap into occupied slots)
+    if (targetSlot.assignedPerformance !== undefined) {
+      // Tapping an occupied slot switches selection to that placed player
+      setSelectedPlacement({ player: targetSlot.assignedPerformance, fromSlotId: targetSlotId });
+      return;
+    }
+
+    // Check position compatibility
+    const isPlayable = isPlayerPositionCompatible(
+      selectedPlayer.position,
+      selectedPlayer.secondaryPositions || [],
+      targetSlot.slotConfig.position
+    );
+
+    if (!isPlayable) {
+      setSelectedPlacement(null);
+      return;
+    }
+
+    // Target position is EMPTY & COMPATIBLE! Execute placement.
+    executePlayerPlacement(selectedPlayer, targetSlotId, fromSlotId);
+    setSelectedPlacement(null);
+  };
+
+  // Core Assign, Swap & Bump Handler
+  const executePlayerPlacement = (
     player: PlayerEditionPerformance,
     targetSlotId: string,
     fromSlotId: string | null
   ) => {
-    const targetSlot = slots.find(s => s.slotConfig.id === targetSlotId);
-    if (!targetSlot) return;
-
-    // Check position compatibility
-    const isValidPos = isPlayerPositionCompatible(
-      player.position,
-      player.secondaryPositions || [],
-      targetSlot.slotConfig.position
-    );
-
-    if (!isValidPos) return; // Reject invalid position drops!
-
     setSlots(prevSlots => {
+      const targetSlot = prevSlots.find(s => s.slotConfig.id === targetSlotId);
+      if (!targetSlot) return prevSlots;
+
       const existingInTarget = targetSlot.assignedPerformance;
 
       return prevSlots.map(s => {
-        // Target Slot gets assigned the new player
+        // 1. Target slot gets assigned the selected player
         if (s.slotConfig.id === targetSlotId) {
           const fit = calculatePositionFit(s.slotConfig.position, player);
           return {
@@ -162,10 +232,17 @@ export const DraftPage: React.FC<DraftPageProps> = ({
           };
         }
 
-        // If player came from another pitch slot (fromSlotId)
+        // 2. If selected player came from another pitch slot (fromSlotId)
         if (fromSlotId && s.slotConfig.id === fromSlotId) {
-          // If target slot was occupied by existingInTarget, swap existingInTarget into fromSlotId if compatible!
-          if (existingInTarget && isPlayerPositionCompatible(existingInTarget.position, existingInTarget.secondaryPositions || [], s.slotConfig.position)) {
+          // SWAP CASE: If target slot was occupied by existingInTarget, swap existingInTarget into fromSlotId!
+          if (
+            existingInTarget &&
+            isPlayerPositionCompatible(
+              existingInTarget.position,
+              existingInTarget.secondaryPositions || [],
+              s.slotConfig.position
+            )
+          ) {
             const fit = calculatePositionFit(s.slotConfig.position, existingInTarget);
             return {
               ...s,
@@ -173,7 +250,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
               positionFit: fit,
             };
           }
-          // Otherwise clear fromSlotId
+          // VACATE CASE: Otherwise clear fromSlotId
           return {
             ...s,
             assignedPerformance: undefined,
@@ -181,7 +258,8 @@ export const DraftPage: React.FC<DraftPageProps> = ({
           };
         }
 
-        // Prevent Duplicate Players: If player was already in another slot in XI, clear that previous slot
+        // 3. Prevent duplicate players in XI:
+        // If selected player came from unplaced squad pool (fromSlotId === null), but was somehow in another slot, clear it
         if (!fromSlotId && s.assignedPerformance?.id === player.id) {
           return {
             ...s,
@@ -194,12 +272,12 @@ export const DraftPage: React.FC<DraftPageProps> = ({
       });
     });
 
-    // Only reset spin state if the player came from the spun squad list (fromSlotId === null)!
+    // Consuming the spin: When a player is selected from the spin list (fromSlotId === null) and placed into a pitch slot:
+    // Immediately clear/discard the current spin's player pool and reset left panel to "READY TO DRAFT" (SPIN button)!
     if (!fromSlotId) {
       setHasSpun(false);
       setSpunTeam(null);
     }
-    setDraggedPlayer(null);
 
     const remainingSlot = slots.find(s => s.slotConfig.id !== targetSlotId && s.assignedPerformance === undefined);
     setActiveSlotId(remainingSlot ? remainingSlot.slotConfig.id : null);
@@ -218,7 +296,8 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     setHasSpun(false);
     setHasEverSpun(false);
     setSpunTeam(null);
-    setDraggedPlayer(null);
+    setDrawnSquadPool([]);
+    setSelectedPlacement(null);
   };
 
   const isFormationLocked = hasEverSpun || slots.some(s => s.assignedPerformance !== undefined);
@@ -250,6 +329,20 @@ export const DraftPage: React.FC<DraftPageProps> = ({
 
     onCompleteDraft(squad);
   };
+
+  const openCompatibleSlots = selectedPlacement
+    ? slots.filter(
+        s =>
+          s.assignedPerformance === undefined &&
+          isPlayerPositionCompatible(
+            selectedPlacement.player.position,
+            selectedPlacement.player.secondaryPositions || [],
+            s.slotConfig.position
+          )
+      )
+    : [];
+
+  const hasOpenCompatibleSlot = openCompatibleSlots.length > 0;
 
   return (
     <div className="min-h-screen fx-turf fx-vignette px-3 sm:px-6 py-4 sm:py-6 font-sans">
@@ -403,25 +496,48 @@ export const DraftPage: React.FC<DraftPageProps> = ({
               squad={spunTeam.squad}
               slots={slots}
               draftedIds={draftedPerformanceIds}
-              onSelectPlayer={handlePickPlayer}
-              onDragStartPlayer={(player) => setDraggedPlayer(player)}
-              onDragEndPlayer={() => setDraggedPlayer(null)}
+              selectedPlayerId={selectedPlacement?.player.id}
+              onSelectPlayer={handlePickUnplacedPlayer}
             />
           )}
         </div>
 
         {/* CENTER COLUMN: INTERACTIVE FOOTBALL PITCH */}
-        <div className={`lg:col-span-5 h-[620px] sm:h-[720px] bg-[#081310] rounded-2xl p-2 sm:p-4 border border-white/10 shadow-2xl flex items-center justify-center overflow-hidden ${
+        <div className={`lg:col-span-5 h-[620px] sm:h-[720px] bg-[#081310] rounded-2xl p-2 sm:p-4 border border-white/10 shadow-2xl flex flex-col items-center justify-center overflow-hidden relative ${
           mobileTab === 'PITCH' ? 'flex' : 'hidden lg:flex'
         }`}>
+          {/* PLACEMENT PROMPT BANNER ABOVE PITCH */}
+          {selectedPlacement && (
+            <div className="w-full mb-2 p-2 sm:p-2.5 rounded-xl bg-cyan-950/80 border border-cyan-400/50 flex items-center justify-between gap-2 shadow-xl z-30 animate-fadeIn shrink-0">
+              <div className="flex items-center space-x-2 truncate">
+                <span className="p-1 px-2 rounded bg-cyan-400 text-black font-black text-[10px] sm:text-xs uppercase tracking-wider shrink-0">
+                  PLAYER SELECTED
+                </span>
+                <span className="text-xs font-bold text-white truncate">
+                  <strong className="text-cyan-300 font-extrabold">{selectedPlacement.player.name}</strong> ({selectedPlacement.player.position}{selectedPlacement.player.secondaryPositions?.length ? ` / ${selectedPlacement.player.secondaryPositions.join(', ')}` : ''})
+                  <span className="text-white/70 text-[11px] ml-2 hidden sm:inline">
+                    {hasOpenCompatibleSlot
+                      ? '• Tap an open highlighted slot on the pitch'
+                      : '• No open positions available for this player'}
+                  </span>
+                </span>
+              </div>
+              <button
+                onClick={() => setSelectedPlacement(null)}
+                className="px-2.5 py-1 text-[10px] sm:text-xs font-bold text-cyan-200 hover:text-white bg-cyan-900/50 hover:bg-cyan-800/80 rounded transition-colors uppercase border border-cyan-500/40 shrink-0"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
+
           <FootballPitch
             slots={slots}
             activeSlotId={activeSlotId}
-            draggedPlayer={draggedPlayer}
-            onSelectSlot={setActiveSlotId}
-            onDropOnSlot={(targetSlotId, player, fromSlotId) => handleAssignPlayerToSlot(player, targetSlotId, fromSlotId)}
-            onDragStartSlotPlayer={(player) => setDraggedPlayer(player)}
-            onDragEndSlotPlayer={() => setDraggedPlayer(null)}
+            selectedPlacement={selectedPlacement}
+            onSelectSlot={handleSelectSlot}
+            onSelectPlacedPlayer={handlePickPlacedPlayer}
+            onCancelSelection={() => setSelectedPlacement(null)}
           />
         </div>
 

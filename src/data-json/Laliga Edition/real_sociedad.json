@@ -1,0 +1,335 @@
+{
+  "sel": "RSO",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "alex-remiro",
+      "name": "Remiro",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 84,
+      "legend": false
+    },
+    {
+      "playerId": "unai-marrero",
+      "name": "Marrero",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "aitor-fraga",
+      "name": "Fraga",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 32,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "jon-aramburu",
+      "name": "J. Aramburu",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 2,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "aihen-munoz",
+      "name": "Aihen Muñoz",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 3,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "jon-pacheco",
+      "name": "Pacheco",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "sergio-gomez",
+      "name": "Sergio Gómez",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "LE",
+        "ME"
+      ],
+      "number": 17,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "mamadou-sarr",
+      "name": "M. Sarr",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "hector-fort",
+      "name": "Héctor Fort",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "LD",
+        "LE"
+      ],
+      "number": 18,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "luken-beitia",
+      "name": "Beitia",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 30,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "jon-martin",
+      "name": "Jon Martín",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 31,
+      "force": 70,
+      "legend": false
+    },
+    {
+      "playerId": "igor-zubeldia",
+      "name": "Zubeldia",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG",
+        "MEI"
+      ],
+      "number": 6,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "jon-gorrotxategi",
+      "name": "Gorrotxategi",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 15,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "benat-turrientes",
+      "name": "Turrientes",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "mikel-oyarzabal",
+      "name": "Oyarzabal",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "CA"
+      ],
+      "number": 10,
+      "force": 83,
+      "legend": true
+    },
+    {
+      "playerId": "pablo-marin",
+      "name": "Pablo Marín",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 22,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-soler",
+      "name": "Carlos Soler",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 12,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "yangel-herrera",
+      "name": "Yangel Herrera",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 16,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "arsen-zakharyan",
+      "name": "Zakharyan",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 21,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "luka-sucic",
+      "name": "Sučić",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 24,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "alex-lebarbier",
+      "name": "Lebarbier",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 27,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "mikel-goti",
+      "name": "Goti",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 28,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "ander-barrenetxea",
+      "name": "Barrenetxea",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 7,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "orri-oskarsson",
+      "name": "Óskarsson",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "goncalo-guedes",
+      "name": "Guedes",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "CA"
+      ],
+      "number": 11,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "takefusa-kubo",
+      "name": "Kubo",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 14,
+      "force": 84,
+      "legend": false
+    },
+    {
+      "playerId": "job-ochieng",
+      "name": "Ochieng",
+      "sel": "RSO",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 29,
+      "force": 64,
+      "legend": false
+    }
+  ]
+}

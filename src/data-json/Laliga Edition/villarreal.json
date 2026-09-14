@@ -1,0 +1,325 @@
+{
+  "sel": "VIL",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "luiz-junior",
+      "name": "Luiz Júnior",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "peter-gulacsi",
+      "name": "Gulácsi",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 25,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "ruben-gomez",
+      "name": "Rubén Gómez",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "yakiv-kinareikin",
+      "name": "Kinareikin",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": null,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "logan-costa",
+      "name": "Logan Costa",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 2,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "alex-freeman",
+      "name": "Alex Freeman",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 3,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "pau-navarro",
+      "name": "Pau Navarro",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 6,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "juan-foyth",
+      "name": "Foyth",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "LD",
+        "ZAG"
+      ],
+      "number": 8,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "renato-veiga",
+      "name": "Renato Veiga",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG",
+        "LE"
+      ],
+      "number": 12,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "santiago-mourino",
+      "name": "Mouriño",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "LD",
+        "ZAG"
+      ],
+      "number": 15,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-romero",
+      "name": "Carlos Romero",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 20,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "sergi-cardona",
+      "name": "Sergi Cardona",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 23,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "nathan-saliba",
+      "name": "Saliba",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 24,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "pape-gueye",
+      "name": "Pape Gueye",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 18,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "santi-comesana",
+      "name": "Comesaña",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 14,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "alberto-moleiro",
+      "name": "Moleiro",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "MEI"
+      ],
+      "number": 10,
+      "force": 81,
+      "legend": false
+    },
+    {
+      "playerId": "alassane-diatta",
+      "name": "Diatta",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 5,
+      "force": 68,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-macia",
+      "name": "Carlos Macià",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 16,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "nizar-el-jmili",
+      "name": "El Jmili",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 27,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "gerard-moreno",
+      "name": "Gerard Moreno",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "CA",
+        "PD"
+      ],
+      "number": 7,
+      "force": 82,
+      "legend": true
+    },
+    {
+      "playerId": "georges-mikautadze",
+      "name": "Mikautadze",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 81,
+      "legend": false
+    },
+    {
+      "playerId": "ilias-akhomach",
+      "name": "Akhomach",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 11,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "tajon-buchanan",
+      "name": "Buchanan",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "MD",
+        "PD"
+      ],
+      "number": 17,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "nicolas-pepe",
+      "name": "N. Pépé",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 19,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "tani-oluwaseyi",
+      "name": "Oluwaseyi",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 21,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "ayoze-perez",
+      "name": "Ayoze Pérez",
+      "sel": "VIL",
+      "copa": "2026-27",
+      "positions": [
+        "CA",
+        "PE"
+      ],
+      "number": 22,
+      "force": 81,
+      "legend": false
+    }
+  ]
+}

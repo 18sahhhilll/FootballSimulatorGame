@@ -1,0 +1,348 @@
+{
+  "sel": "CEL",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "altay-bayindir",
+      "name": "Bayındır",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "ionut-radu",
+      "name": "I. Radu",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "ivan-villar",
+      "name": "Iván Villar",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 25,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "carl-starfelt",
+      "name": "Starfelt",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 2,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "marcos-alonso",
+      "name": "Marcos Alonso",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG",
+        "LE"
+      ],
+      "number": 20,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "abdoulaye-faye",
+      "name": "Faye",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 70,
+      "legend": false
+    },
+    {
+      "playerId": "sergio-carreira",
+      "name": "Carreira",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 5,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "alvaro-nunez",
+      "name": "Álvaro Núñez",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 15,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "javi-rueda",
+      "name": "Javi Rueda",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 17,
+      "force": 69,
+      "legend": false
+    },
+    {
+      "playerId": "yoel-lago",
+      "name": "Yoel Lago",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 18,
+      "force": 68,
+      "legend": false
+    },
+    {
+      "playerId": "javi-rodriguez",
+      "name": "Javi Rodríguez",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG",
+        "LD"
+      ],
+      "number": 20,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "sebastian-caceres",
+      "name": "S. Cáceres",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 21,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "javi-galan",
+      "name": "Javi Galán",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 22,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "ilaix-moriba",
+      "name": "Moriba",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 6,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "miguel-roman",
+      "name": "Miguel Román",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 67,
+      "legend": false
+    },
+    {
+      "playerId": "aleix-febas",
+      "name": "Febas",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 14,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "hugo-alvarez",
+      "name": "Hugo Álvarez",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "ME",
+        "LE"
+      ],
+      "number": 23,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "stefan-bajcetic",
+      "name": "Bajčetić",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 29,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "borja-iglesias",
+      "name": "Borja Iglesias",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 7,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "ferran-jutgla",
+      "name": "Jutglà",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "CA",
+        "PE"
+      ],
+      "number": 9,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "iago-aspas",
+      "name": "Iago Aspas",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "CA",
+        "PD"
+      ],
+      "number": 10,
+      "force": 81,
+      "legend": true
+    },
+    {
+      "playerId": "pablo-duran",
+      "name": "Pablo Durán",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 11,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "hugo-gonzalez",
+      "name": "Hugo González",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 16,
+      "force": 68,
+      "legend": false
+    },
+    {
+      "playerId": "williot-swedberg",
+      "name": "Swedberg",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "MEI"
+      ],
+      "number": 19,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "couhaib-driouech",
+      "name": "Driouech",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 24,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "andres-antanon",
+      "name": "Antañón",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 28,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "hugo-burcio",
+      "name": "Burcio",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 30,
+      "force": 63,
+      "legend": false
+    },
+    {
+      "playerId": "jones-el-abdellaoui",
+      "name": "El-Abdellaoui",
+      "sel": "CEL",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 39,
+      "force": 65,
+      "legend": false
+    }
+  ]
+}

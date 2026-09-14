@@ -1,0 +1,272 @@
+{
+  "sel": "MAL",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "alfonso-herrero",
+      "name": "A. Herrero",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-lopez",
+      "name": "Carlos López",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 68,
+      "legend": false
+    },
+    {
+      "playerId": "juan-berrocal",
+      "name": "Berrocal",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "nelson-monte",
+      "name": "Nélson Monte",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "alex-pastor",
+      "name": "Álex Pastor",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 6,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "einar-galilea",
+      "name": "Galilea",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 15,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "dani-sanchez",
+      "name": "Dani Sánchez",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 3,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "victor-garcia",
+      "name": "Víctor García",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 2,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "david-larrubia",
+      "name": "Larrubia",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "MD",
+        "MEI"
+      ],
+      "number": 10,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "jens-cajuste",
+      "name": "Cajuste",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "pablo-martinez",
+      "name": "Pablo Mtz",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 16,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-dotor",
+      "name": "Dotor",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 14,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "juan-cruz",
+      "name": "Juan Cruz",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "PD",
+        "MEI"
+      ],
+      "number": 11,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "luismi-sanchez",
+      "name": "Luismi",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 18,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "manu-molina",
+      "name": "Manu Molina",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 20,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "dani-lorenzo",
+      "name": "Dani Lorenzo",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 22,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "aaron-ochoa",
+      "name": "Aarón Ochoa",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 27,
+      "force": 68,
+      "legend": false
+    },
+    {
+      "playerId": "adrian-nino",
+      "name": "Adrián Niño",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "roberto-fernandez",
+      "name": "Roberto",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 19,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "chupete",
+      "name": "Chupete",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 28,
+      "force": 67,
+      "legend": false
+    },
+    {
+      "playerId": "haitam-abaida",
+      "name": "Haitam",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 7,
+      "force": 70,
+      "legend": false
+    },
+    {
+      "playerId": "kevin-medina",
+      "name": "Kevin Medina",
+      "sel": "MAL",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 17,
+      "force": 74,
+      "legend": false
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "sel": "SEV",
+  "copa": "2026-27",
+  "squad": [
+    {"playerId": "odisseas-vlachodimos", "name": "Vlachodimos", "sel": "SEV", "copa": "2026-27", "positions": ["GOL"], "number": 1, "force": 80, "legend": false},
+    {"playerId": "fran", "name": "Fran", "sel": "SEV", "copa": "2026-27", "positions": ["GOL"], "number": null, "force": 66, "legend": false},
+    {"playerId": "rafa-romero", "name": "Rafa Romero", "sel": "SEV", "copa": "2026-27", "positions": ["GOL"], "number": 33, "force": 63, "legend": false},
+
+    {"playerId": "marcao", "name": "Marcão", "sel": "SEV", "copa": "2026-27", "positions": ["ZAG"], "number": 23, "force": 78, "legend": false},
+    {"playerId": "fabio-cardoso", "name": "F. Cardoso", "sel": "SEV", "copa": "2026-27", "positions": ["ZAG"], "number": 15, "force": 76, "legend": false},
+    {"playerId": "kike-salas", "name": "Kike Salas", "sel": "SEV", "copa": "2026-27", "positions": ["ZAG"], "number": 4, "force": 73, "legend": false},
+    {"playerId": "jose-angel", "name": "José Ángel", "sel": "SEV", "copa": "2026-27", "positions": ["LD"], "number": 2, "force": 72, "legend": false},
+    {"playerId": "gabriel-suazo", "name": "Suazo", "sel": "SEV", "copa": "2026-27", "positions": ["LE"], "number": 12, "force": 76, "legend": false},
+    {"playerId": "castrin", "name": "Castrín", "sel": "SEV", "copa": "2026-27", "positions": ["LD"], "number": 32, "force": 70, "legend": false},
+    {"playerId": "iglesias", "name": "Iglesias", "sel": "SEV", "copa": "2026-27", "positions": ["ZAG"], "number": null, "force": 74, "legend": false},
+
+    {"playerId": "youssouf-fofana", "name": "Fofana", "sel": "SEV", "copa": "2026-27", "positions": ["MEI"], "number": 24, "force": 80, "legend": false},
+    {"playerId": "lucien-agoume", "name": "Agoumé", "sel": "SEV", "copa": "2026-27", "positions": ["MEI"], "number": 18, "force": 76, "legend": false},
+    {"playerId": "giorgi-kochorashvili", "name": "Kochorashvili", "sel": "SEV", "copa": "2026-27", "positions": ["MEI"], "number": 6, "force": 77, "legend": false},
+    {"playerId": "jon-guridi", "name": "Guridi", "sel": "SEV", "copa": "2026-27", "positions": ["MEI"], "number": null, "force": 74, "legend": false},
+    {"playerId": "manuel-bueno", "name": "Manu Bueno", "sel": "SEV", "copa": "2026-27", "positions": ["MEI"], "number": 28, "force": 68, "legend": false},
+
+    {"playerId": "ruben-vargas", "name": "Rubén Vargas", "sel": "SEV", "copa": "2026-27", "positions": ["PE", "MD"], "number": 11, "force": 78, "legend": false},
+    {"playerId": "chidera-ejuke", "name": "Ejuke", "sel": "SEV", "copa": "2026-27", "positions": ["PE"], "number": 21, "force": 75, "legend": false},
+    {"playerId": "isaac-romero", "name": "Isaac Romero", "sel": "SEV", "copa": "2026-27", "positions": ["CA"], "number": 7, "force": 77, "legend": false},
+    {"playerId": "peque", "name": "Peque", "sel": "SEV", "copa": "2026-27", "positions": ["PE", "PD"], "number": 14, "force": 74, "legend": false},
+    {"playerId": "lucas-stassin", "name": "Stassin", "sel": "SEV", "copa": "2026-27", "positions": ["CA"], "number": null, "force": 76, "legend": false},
+    {"playerId": "felix-correia", "name": "Félix Correia", "sel": "SEV", "copa": "2026-27", "positions": ["PE"], "number": null, "force": 73, "legend": false},
+    {"playerId": "alfon-gonzalez", "name": "Alfon", "sel": "SEV", "copa": "2026-27", "positions": ["PE"], "number": null, "force": 72, "legend": false},
+    {"playerId": "robbie-ure", "name": "Robbie Ure", "sel": "SEV", "copa": "2026-27", "positions": ["CA"], "number": null, "force": 68, "legend": false},
+    {"playerId": "miguel-angel-sierra", "name": "M. Á. Sierra", "sel": "SEV", "copa": "2026-27", "positions": ["CA"], "number": 29, "force": 64, "legend": false}
+  ]
+}

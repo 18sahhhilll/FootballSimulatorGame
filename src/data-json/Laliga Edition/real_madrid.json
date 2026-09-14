@@ -1,0 +1,41 @@
+{
+  "sel": "RMA",
+  "copa": "2026-27",
+  "squad": [
+    {"playerId": "thibaut-courtois", "name": "Courtois", "sel": "RMA", "copa": "2026-27", "positions": ["GOL"], "number": 1, "force": 88, "legend": false},
+    {"playerId": "andriy-lunin", "name": "Lunin", "sel": "RMA", "copa": "2026-27", "positions": ["GOL"], "number": 13, "force": 79, "legend": false},
+    {"playerId": "javi-navarro", "name": "Javi Navarro", "sel": "RMA", "copa": "2026-27", "positions": ["GOL"], "number": 31, "force": 65, "legend": false},
+    {"playerId": "sergio-mestre", "name": "Sergio Mestre", "sel": "RMA", "copa": "2026-27", "positions": ["GOL"], "number": 26, "force": 64, "legend": false},
+
+    {"playerId": "eder-militao", "name": "Militão", "sel": "RMA", "copa": "2026-27", "positions": ["ZAG"], "number": 3, "force": 85, "legend": false},
+    {"playerId": "dean-huijsen", "name": "Huijsen", "sel": "RMA", "copa": "2026-27", "positions": ["ZAG"], "number": 4, "force": 83, "legend": false},
+    {"playerId": "ibrahima-konate", "name": "Konaté", "sel": "RMA", "copa": "2026-27", "positions": ["ZAG"], "number": 16, "force": 85, "legend": false},
+    {"playerId": "antonio-rudiger", "name": "Rüdiger", "sel": "RMA", "copa": "2026-27", "positions": ["ZAG"], "number": 22, "force": 84, "legend": false},
+    {"playerId": "raul-asencio", "name": "Asencio", "sel": "RMA", "copa": "2026-27", "positions": ["ZAG"], "number": 2, "force": 78, "legend": false},
+    {"playerId": "trent-alexander-arnold", "name": "Trent A-A", "sel": "RMA", "copa": "2026-27", "positions": ["LD", "MD"], "number": 12, "force": 84, "legend": false},
+    {"playerId": "denzel-dumfries", "name": "Dumfries", "sel": "RMA", "copa": "2026-27", "positions": ["LD"], "number": 24, "force": 82, "legend": false},
+    {"playerId": "alvaro-carreras", "name": "Carreras", "sel": "RMA", "copa": "2026-27", "positions": ["LE"], "number": 18, "force": 80, "legend": false},
+    {"playerId": "marc-cucurella", "name": "Cucurella", "sel": "RMA", "copa": "2026-27", "positions": ["LE"], "number": 17, "force": 82, "legend": false},
+    {"playerId": "ferland-mendy", "name": "Mendy", "sel": "RMA", "copa": "2026-27", "positions": ["LE"], "number": 23, "force": 79, "legend": false},
+    {"playerId": "mario-rivas", "name": "Mario Rivas", "sel": "RMA", "copa": "2026-27", "positions": ["ZAG"], "number": 33, "force": 63, "legend": false},
+
+    {"playerId": "jude-bellingham", "name": "Bellingham", "sel": "RMA", "copa": "2026-27", "positions": ["MEI"], "number": 5, "force": 90, "legend": false},
+    {"playerId": "federico-valverde", "name": "Valverde", "sel": "RMA", "copa": "2026-27", "positions": ["MEI", "MD"], "number": 8, "force": 87, "legend": false},
+    {"playerId": "bernardo-silva", "name": "B. Silva", "sel": "RMA", "copa": "2026-27", "positions": ["MEI", "MD"], "number": 20, "force": 87, "legend": false},
+    {"playerId": "aurelien-tchouameni", "name": "Tchouaméni", "sel": "RMA", "copa": "2026-27", "positions": ["MEI"], "number": 14, "force": 86, "legend": false},
+    {"playerId": "eduardo-camavinga", "name": "Camavinga", "sel": "RMA", "copa": "2026-27", "positions": ["MEI"], "number": 6, "force": 85, "legend": false},
+    {"playerId": "arda-guler", "name": "Güler", "sel": "RMA", "copa": "2026-27", "positions": ["MEI", "MD"], "number": 15, "force": 84, "legend": false},
+    {"playerId": "brahim-diaz", "name": "Brahim", "sel": "RMA", "copa": "2026-27", "positions": ["MEI", "MD"], "number": 21, "force": 82, "legend": false},
+    {"playerId": "jorge-cestero", "name": "Cestero", "sel": "RMA", "copa": "2026-27", "positions": ["MEI"], "number": 29, "force": 65, "legend": false},
+    {"playerId": "sergio-martinez", "name": "S. Martínez", "sel": "RMA", "copa": "2026-27", "positions": ["MEI"], "number": 38, "force": 63, "legend": false},
+    {"playerId": "thiago-pitarch", "name": "Pitarch", "sel": "RMA", "copa": "2026-27", "positions": ["MEI"], "number": 27, "force": 63, "legend": false},
+
+    {"playerId": "kylian-mbappe", "name": "Mbappé", "sel": "RMA", "copa": "2026-27", "positions": ["PD", "CA"], "number": 10, "force": 94, "legend": false},
+    {"playerId": "vinicius-junior", "name": "Vinícius Jr", "sel": "RMA", "copa": "2026-27", "positions": ["PE", "PD"], "number": 7, "force": 90, "legend": false},
+    {"playerId": "rodrygo", "name": "Rodrygo", "sel": "RMA", "copa": "2026-27", "positions": ["PD", "PE"], "number": 11, "force": 85, "legend": false},
+    {"playerId": "yan-diomande", "name": "Diomande", "sel": "RMA", "copa": "2026-27", "positions": ["PE", "PD"], "number": 25, "force": 78, "legend": false},
+    {"playerId": "endrick", "name": "Endrick", "sel": "RMA", "copa": "2026-27", "positions": ["CA"], "number": 9, "force": 78, "legend": false},
+    {"playerId": "carlos-espi", "name": "Espí", "sel": "RMA", "copa": "2026-27", "positions": ["CA"], "number": 19, "force": 68, "legend": false},
+    {"playerId": "alexis-ciria", "name": "Ciria", "sel": "RMA", "copa": "2026-27", "positions": ["CA"], "number": 36, "force": 62, "legend": false}
+  ]
+}

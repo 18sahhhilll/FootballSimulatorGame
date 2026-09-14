@@ -1,0 +1,37 @@
+{
+  "sel": "ATH",
+  "copa": "2026-27",
+  "squad": [
+    {"playerId": "unai-simon", "name": "Unai Simón", "sel": "ATH", "copa": "2026-27", "positions": ["GOL"], "number": 1, "force": 84, "legend": false},
+    {"playerId": "alex-padilla", "name": "Padilla", "sel": "ATH", "copa": "2026-27", "positions": ["GOL"], "number": 13, "force": 68, "legend": false},
+    {"playerId": "mikel-santos", "name": "Mikel Santos", "sel": "ATH", "copa": "2026-27", "positions": ["GOL"], "number": 26, "force": 62, "legend": false},
+
+    {"playerId": "aymeric-laporte", "name": "Laporte", "sel": "ATH", "copa": "2026-27", "positions": ["ZAG"], "number": 14, "force": 84, "legend": false},
+    {"playerId": "daniel-vivian", "name": "Vivian", "sel": "ATH", "copa": "2026-27", "positions": ["ZAG"], "number": 3, "force": 82, "legend": false},
+    {"playerId": "yeray", "name": "Yeray", "sel": "ATH", "copa": "2026-27", "positions": ["ZAG"], "number": 5, "force": 79, "legend": false},
+    {"playerId": "aitor-paredes", "name": "Paredes", "sel": "ATH", "copa": "2026-27", "positions": ["ZAG"], "number": 4, "force": 77, "legend": false},
+    {"playerId": "areso", "name": "Areso", "sel": "ATH", "copa": "2026-27", "positions": ["LD"], "number": 12, "force": 76, "legend": false},
+    {"playerId": "yuri", "name": "Yuri", "sel": "ATH", "copa": "2026-27", "positions": ["LE"], "number": 17, "force": 75, "legend": false},
+    {"playerId": "hugo-rincon", "name": "Hugo Rincón", "sel": "ATH", "copa": "2026-27", "positions": ["ZAG"], "number": 15, "force": 73, "legend": false},
+    {"playerId": "iker-monreal", "name": "Iker Monreal", "sel": "ATH", "copa": "2026-27", "positions": ["ZAG"], "number": 30, "force": 66, "legend": false},
+    {"playerId": "johaneko-louis-jean", "name": "Louis-Jean", "sel": "ATH", "copa": "2026-27", "positions": ["LD"], "number": 31, "force": 64, "legend": false},
+
+    {"playerId": "oihan-sancet", "name": "Sancet", "sel": "ATH", "copa": "2026-27", "positions": ["MEI", "MD"], "number": 8, "force": 85, "legend": false},
+    {"playerId": "mikel-jauregizar", "name": "Jauregizar", "sel": "ATH", "copa": "2026-27", "positions": ["MEI"], "number": 18, "force": 81, "legend": false},
+    {"playerId": "ruiz-de-galarreta", "name": "De Galarreta", "sel": "ATH", "copa": "2026-27", "positions": ["MEI"], "number": 16, "force": 78, "legend": false},
+    {"playerId": "benat-prados", "name": "Prados", "sel": "ATH", "copa": "2026-27", "positions": ["MEI"], "number": 6, "force": 74, "legend": false},
+    {"playerId": "benat-gerenabarrena", "name": "Gerenabarrena", "sel": "ATH", "copa": "2026-27", "positions": ["MEI"], "number": 24, "force": 75, "legend": false},
+    {"playerId": "peio-canales", "name": "Peio Canales", "sel": "ATH", "copa": "2026-27", "positions": ["MEI"], "number": 28, "force": 68, "legend": false},
+    {"playerId": "alejandro-rego", "name": "Alejandro Rego", "sel": "ATH", "copa": "2026-27", "positions": ["MEI"], "number": 20, "force": 63, "legend": false},
+
+    {"playerId": "nico-williams", "name": "Nico Williams", "sel": "ATH", "copa": "2026-27", "positions": ["PE", "PD"], "number": 10, "force": 87, "legend": false},
+    {"playerId": "inaki-williams", "name": "Iñaki Williams", "sel": "ATH", "copa": "2026-27", "positions": ["CA", "PD"], "number": 9, "force": 82, "legend": false},
+    {"playerId": "guruzeta", "name": "Guruzeta", "sel": "ATH", "copa": "2026-27", "positions": ["CA"], "number": 11, "force": 79, "legend": false},
+    {"playerId": "alex-berenguer", "name": "Berenguer", "sel": "ATH", "copa": "2026-27", "positions": ["PE", "MD"], "number": 7, "force": 78, "legend": false},
+    {"playerId": "robert-navarro", "name": "R. Navarro", "sel": "ATH", "copa": "2026-27", "positions": ["PE", "PD"], "number": 23, "force": 77, "legend": false},
+    {"playerId": "nico-serrano", "name": "Nico Serrano", "sel": "ATH", "copa": "2026-27", "positions": ["PD"], "number": 22, "force": 74, "legend": false},
+    {"playerId": "alvaro-djalo", "name": "Djaló", "sel": "ATH", "copa": "2026-27", "positions": ["PE"], "number": 25, "force": 73, "legend": false},
+    {"playerId": "sannadi", "name": "Sannadi", "sel": "ATH", "copa": "2026-27", "positions": ["CA"], "number": 21, "force": 65, "legend": false},
+    {"playerId": "asier-hierro", "name": "Asier Hierro", "sel": "ATH", "copa": "2026-27", "positions": ["CA"], "number": 9, "force": 63, "legend": false}
+  ]
+}

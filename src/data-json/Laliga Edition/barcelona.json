@@ -1,0 +1,40 @@
+{
+  "sel": "BAR",
+  "copa": "2026-27",
+  "squad": [
+    {"playerId": "joan-garcia", "name": "Joan García", "sel": "BAR", "copa": "2026-27", "positions": ["GOL"], "number": 1, "force": 85, "legend": false},
+    {"playerId": "eder-aller", "name": "Éder Aller", "sel": "BAR", "copa": "2026-27", "positions": ["GOL"], "number": 31, "force": 68, "legend": false},
+    {"playerId": "dominik-livakovic", "name": "Livaković", "sel": "BAR", "copa": "2026-27", "positions": ["GOL"], "number": null, "force": 80, "legend": false},
+    {"playerId": "wojciech-szczesny", "name": "Szczęsny", "sel": "BAR", "copa": "2026-27", "positions": ["GOL"], "number": 13, "force": 82, "legend": false},
+
+    {"playerId": "alejandro-balde", "name": "Balde", "sel": "BAR", "copa": "2026-27", "positions": ["LE", "LD"], "number": 3, "force": 83, "legend": false},
+    {"playerId": "joao-cancelo", "name": "Cancelo", "sel": "BAR", "copa": "2026-27", "positions": ["LD", "LE"], "number": 2, "force": 84, "legend": false},
+    {"playerId": "jules-kounde", "name": "Koundé", "sel": "BAR", "copa": "2026-27", "positions": ["LD", "ZAG"], "number": 23, "force": 86, "legend": false},
+    {"playerId": "pau-cubarsi", "name": "Cubarsí", "sel": "BAR", "copa": "2026-27", "positions": ["ZAG"], "number": 5, "force": 85, "legend": false},
+    {"playerId": "andreas-christensen", "name": "Christensen", "sel": "BAR", "copa": "2026-27", "positions": ["ZAG"], "number": 15, "force": 81, "legend": false},
+    {"playerId": "eric-garcia", "name": "Eric García", "sel": "BAR", "copa": "2026-27", "positions": ["ZAG", "LD"], "number": 24, "force": 79, "legend": false},
+    {"playerId": "gerard-martin", "name": "Gerard Martín", "sel": "BAR", "copa": "2026-27", "positions": ["LE"], "number": 18, "force": 76, "legend": false},
+    {"playerId": "jordi-pesquer", "name": "Jordi Pesquer", "sel": "BAR", "copa": "2026-27", "positions": ["ZAG"], "number": 33, "force": 67, "legend": false},
+    {"playerId": "xavi-espart", "name": "Xavi Espart", "sel": "BAR", "copa": "2026-27", "positions": ["LD"], "number": 12, "force": 66, "legend": false},
+
+    {"playerId": "pedri", "name": "Pedri", "sel": "BAR", "copa": "2026-27", "positions": ["MEI"], "number": 8, "force": 89, "legend": false},
+    {"playerId": "rodri", "name": "Rodri", "sel": "BAR", "copa": "2026-27", "positions": ["MEI"], "number": 16, "force": 90, "legend": false},
+    {"playerId": "frenkie-de-jong", "name": "F. de Jong", "sel": "BAR", "copa": "2026-27", "positions": ["MEI"], "number": 21, "force": 85, "legend": false},
+    {"playerId": "gavi", "name": "Gavi", "sel": "BAR", "copa": "2026-27", "positions": ["MEI", "ME"], "number": 6, "force": 84, "legend": false},
+    {"playerId": "dani-olmo", "name": "Dani Olmo", "sel": "BAR", "copa": "2026-27", "positions": ["MEI", "MD"], "number": 20, "force": 84, "legend": false},
+    {"playerId": "fermin-lopez", "name": "Fermín López", "sel": "BAR", "copa": "2026-27", "positions": ["MEI", "MD"], "number": 7, "force": 83, "legend": false},
+    {"playerId": "marc-bernal", "name": "Marc Bernal", "sel": "BAR", "copa": "2026-27", "positions": ["MEI"], "number": 22, "force": 74, "legend": false},
+    {"playerId": "brian-farinas", "name": "Brian Fariñas", "sel": "BAR", "copa": "2026-27", "positions": ["MEI"], "number": 4, "force": 68, "legend": false},
+
+    {"playerId": "lamine-yamal", "name": "Lamine Yamal", "sel": "BAR", "copa": "2026-27", "positions": ["PD", "MEI"], "number": 10, "force": 92, "legend": false},
+    {"playerId": "raphinha", "name": "Raphinha", "sel": "BAR", "copa": "2026-27", "positions": ["PE", "MD"], "number": 11, "force": 88, "legend": false},
+    {"playerId": "anthony-gordon", "name": "A. Gordon", "sel": "BAR", "copa": "2026-27", "positions": ["PE", "MD"], "number": 17, "force": 83, "legend": false},
+    {"playerId": "karim-adeyemi", "name": "Adeyemi", "sel": "BAR", "copa": "2026-27", "positions": ["PE", "PD"], "number": 14, "force": 82, "legend": false},
+    {"playerId": "gabriel-jesus", "name": "G. Jesus", "sel": "BAR", "copa": "2026-27", "positions": ["CA"], "number": null, "force": 82, "legend": false},
+    {"playerId": "roony-bardghji", "name": "Bardghji", "sel": "BAR", "copa": "2026-27", "positions": ["PE", "PD"], "number": 19, "force": 78, "legend": false},
+    {"playerId": "juan-hernandez", "name": "Juan Hernández", "sel": "BAR", "copa": "2026-27", "positions": ["CA"], "number": 41, "force": 65, "legend": false},
+    {"playerId": "hamza-abdelkarim", "name": "H. Abdelkarim", "sel": "BAR", "copa": "2026-27", "positions": ["CA"], "number": 29, "force": 65, "legend": false},
+    {"playerId": "jesse-bisiwu", "name": "J. Bisiwu", "sel": "BAR", "copa": "2026-27", "positions": ["CA"], "number": null, "force": 63, "legend": false},
+    {"playerId": "hamza-abdelkarem", "name": "H. Abdelkarem", "sel": "BAR", "copa": "2026-27", "positions": ["PE"], "number": null, "force": 62, "legend": false}
+  ]
+}

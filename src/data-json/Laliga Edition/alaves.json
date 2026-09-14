@@ -1,0 +1,345 @@
+{
+  "sel": "ALA",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "antonio-sivera",
+      "name": "Sivera",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "jesus-owono",
+      "name": "Owono",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "adrian-rodriguez",
+      "name": "Adrián R.",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 31,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "nahuel-tenaglia",
+      "name": "Tenaglia",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "LD",
+        "ZAG"
+      ],
+      "number": 14,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "abdelkabir-abqar",
+      "name": "Abqar",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "santiago-mourino",
+      "name": "Mouriño",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 12,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "facundo-garces",
+      "name": "Garcés",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "nikola-maras",
+      "name": "Maraš",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 2,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "nicolas-valentini",
+      "name": "Valentini",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 16,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "ville-koski",
+      "name": "Koski",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 22,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "jon-guridi",
+      "name": "Guridi",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 18,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "jon-pacheco",
+      "name": "Pacheco",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 3,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "antonio-blanco",
+      "name": "Antonio Blanco",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-protesoni",
+      "name": "Benavídez",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 23,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "ander-guevara",
+      "name": "Guevara",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 6,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-alena",
+      "name": "Aleñá",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 10,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "denis-suarez",
+      "name": "Denis Suárez",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "MEI",
+        "PE"
+      ],
+      "number": 20,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "toni-martinez",
+      "name": "Toni Martínez",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 11,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "miguel-de-la-fuente",
+      "name": "De la Fuente",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "mikel-rosales",
+      "name": "Rosales",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 27,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "lucas-boye",
+      "name": "Boyé",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 15,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "mariano-diaz",
+      "name": "Mariano",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 17,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-martin",
+      "name": "Carlos Martín",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "CA"
+      ],
+      "number": 19,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "abde-rebbach",
+      "name": "Rebbach",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 7,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "angel-perez",
+      "name": "Ángel Pérez",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 28,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "youssef",
+      "name": "Youssef",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 29,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "manas",
+      "name": "Mañas",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 30,
+      "force": 63,
+      "legend": false
+    },
+    {
+      "playerId": "xanet-olaiz",
+      "name": "Olaiz",
+      "sel": "ALA",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 32,
+      "force": 64,
+      "legend": false
+    }
+  ]
+}

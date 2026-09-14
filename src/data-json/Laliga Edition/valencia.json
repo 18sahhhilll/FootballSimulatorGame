@@ -1,0 +1,359 @@
+{
+  "sel": "VAL",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "stole-dimitrievski",
+      "name": "Dimitrievski",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "cristian-rivero",
+      "name": "Rivero",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 69,
+      "legend": false
+    },
+    {
+      "playerId": "julen-agirrezabala",
+      "name": "Agirrezabala",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 25,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "jose-copete",
+      "name": "Copete",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "mouctar-diakhaby",
+      "name": "Diakhaby",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "cesar-tarrega",
+      "name": "Tárrega",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 15,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "justin-de-haas",
+      "name": "De Haas",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 6,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "jose-gaya",
+      "name": "Gayà",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 14,
+      "force": 81,
+      "legend": true
+    },
+    {
+      "playerId": "dimitri-foulquier",
+      "name": "Foulquier",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 20,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "jesus-vazquez",
+      "name": "J. Vázquez",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 21,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "thierry-correia",
+      "name": "Thierry C.",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 12,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "pablo-maffeo",
+      "name": "Maffeo",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 2,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "arnau-martinez",
+      "name": "Arnau Martínez",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "LD",
+        "ZAG"
+      ],
+      "number": 3,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "mathias-van-oevelen",
+      "name": "Van Oevelen",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 26,
+      "force": 68,
+      "legend": false
+    },
+    {
+      "playerId": "guido-rodriguez",
+      "name": "Guido Rodríguez",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 81,
+      "legend": false
+    },
+    {
+      "playerId": "javi-guerra",
+      "name": "Javi Guerra",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 10,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "harvey-elliott",
+      "name": "Elliott",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI",
+        "PD"
+      ],
+      "number": 16,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "luis-rioja",
+      "name": "Luis Rioja",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "ME",
+        "PE"
+      ],
+      "number": 22,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "aliou-dieng",
+      "name": "Dieng",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 17,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "pepelu",
+      "name": "Pepelu",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 18,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "filip-ugrinic",
+      "name": "Ugrinić",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 23,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "arnaut-danjuma",
+      "name": "Danjuma",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "CA"
+      ],
+      "number": 11,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "umar-sadiq",
+      "name": "Sadiq",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 19,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "hugo-duro",
+      "name": "Hugo Duro",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "diego-lopez",
+      "name": "Diego López",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "PD",
+        "PE"
+      ],
+      "number": 7,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "sergi-canos",
+      "name": "Sergi Canós",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 24,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "dani-raba",
+      "name": "Raba",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 27,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "iker-cordoba",
+      "name": "Córdoba",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 31,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "david-otorbi",
+      "name": "Otorbi",
+      "sel": "VAL",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 33,
+      "force": 67,
+      "legend": false
+    }
+  ]
+}

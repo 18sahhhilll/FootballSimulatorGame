@@ -5,16 +5,16 @@ export interface RawJsonPlayer {
   playerId: string;
   name: string;
   sel: string;
-  copa: number;
+  copa: number | string;
   positions: string[];
-  number: number;
+  number: number | null;
   force: number;
   legend?: boolean;
 }
 
 export interface RawJsonTeam {
   sel: string;
-  copa: number;
+  copa: number | string;
   squad: RawJsonPlayer[];
 }
 
@@ -65,6 +65,28 @@ export const COUNTRY_METADATA: Record<string, { name: string; flag: string; prim
   UKR: { name: 'Ukraine', flag: '🇺🇦', primaryColor: '#0057B7', secondaryColor: '#FFD700' },
   URU: { name: 'Uruguay', flag: '🇺🇾', primaryColor: '#55B5E5', secondaryColor: '#FFFFFF' },
   USA: { name: 'United States', flag: '🇺🇸', primaryColor: '#002868', secondaryColor: '#BF0A30' },
+
+  // La Liga Clubs Metadata
+  BAR: { name: 'FC Barcelona', flag: '🔵🔴', primaryColor: '#004D98', secondaryColor: '#A50044' },
+  RMA: { name: 'Real Madrid', flag: '⚪', primaryColor: '#FEBE10', secondaryColor: '#00529F' },
+  ATM: { name: 'Atlético Madrid', flag: '🔴⚪', primaryColor: '#CB3524', secondaryColor: '#272E61' },
+  SEV: { name: 'Sevilla FC', flag: '⚪🔴', primaryColor: '#D71920', secondaryColor: '#FFFFFF' },
+  ATH: { name: 'Athletic Bilbao', flag: '🔴⚪', primaryColor: '#EE2523', secondaryColor: '#000000' },
+  CEL: { name: 'Celta Vigo', flag: '🩵', primaryColor: '#87CEEB', secondaryColor: '#FFFFFF' },
+  BET: { name: 'Real Betis', flag: '🟢⚪', primaryColor: '#00954C', secondaryColor: '#FFFFFF' },
+  VIL: { name: 'Villarreal', flag: '🟡', primaryColor: '#FFE600', secondaryColor: '#00529F' },
+  RSO: { name: 'Real Sociedad', flag: '🔵⚪', primaryColor: '#004085', secondaryColor: '#FFFFFF' },
+  VAL: { name: 'Valencia CF', flag: '⚪🦇', primaryColor: '#FFFFFF', secondaryColor: '#000000' },
+  GET: { name: 'Getafe CF', flag: '🔵', primaryColor: '#00539F', secondaryColor: '#FFFFFF' },
+  OSA: { name: 'CA Osasuna', flag: '🔴🔵', primaryColor: '#D71920', secondaryColor: '#002B7F' },
+  RAY: { name: 'Rayo Vallecano', flag: '⚪🔴', primaryColor: '#E30613', secondaryColor: '#FFFFFF' },
+  ALA: { name: 'Deportivo Alavés', flag: '🔵⚪', primaryColor: '#00529F', secondaryColor: '#FFFFFF' },
+  EPN: { name: 'RCD Espanyol', flag: '🔵⚪', primaryColor: '#0066B3', secondaryColor: '#FFFFFF' },
+  ELC: { name: 'Elche CF', flag: '🟢⚪', primaryColor: '#008751', secondaryColor: '#FFFFFF' },
+  LEV: { name: 'Levante UD', flag: '🔵🔴', primaryColor: '#0033A0', secondaryColor: '#C8102E' },
+  MAL: { name: 'Málaga CF', flag: '🩵⚪', primaryColor: '#6CABDD', secondaryColor: '#FFFFFF' },
+  RAC: { name: 'Racing Santander', flag: '🟢⚪', primaryColor: '#008000', secondaryColor: '#FFFFFF' },
+  DEP: { name: 'Deportivo La Coruña', flag: '🔵⚪', primaryColor: '#004B87', secondaryColor: '#FFFFFF' },
 };
 
 const POS_MAP: Record<string, Position> = {
@@ -167,14 +189,14 @@ function deriveAttributes(pos: Position, force: number) {
 }
 
 export function loadAllJsonHistoricalTeams(): HistoricalTeamEdition[] {
-  // Use Vite's import.meta.glob to load all 177 JSON squad files dynamically
-  const jsonFiles = import.meta.glob<RawJsonTeam>('../data-json/*.json', { eager: true });
+  // Load team JSONs from all subdirectories in src/data-json/ (World Cup Edition, Laliga Edition, etc.)
+  const jsonFiles = import.meta.glob<RawJsonTeam>('../data-json/**/*.json', { eager: true });
   
   const teams: HistoricalTeamEdition[] = [];
 
   for (const path in jsonFiles) {
     const rawData = jsonFiles[path];
-    if (!rawData || !rawData.sel || !rawData.copa || !Array.isArray(rawData.squad)) {
+    if (!rawData || !rawData.sel || !Array.isArray(rawData.squad)) {
       continue;
     }
 
@@ -186,6 +208,7 @@ export function loadAllJsonHistoricalTeams(): HistoricalTeamEdition[] {
     };
 
     const teamId = countryMeta.name.toLowerCase().replace(/\s+/g, '-');
+    const yearVal = typeof rawData.copa === 'number' ? rawData.copa : (parseInt(String(rawData.copa)) || 2026);
     const editionId = `world-cup-${rawData.copa}`;
     const historicalId = `${teamId}-${rawData.copa}`;
 
@@ -216,7 +239,7 @@ export function loadAllJsonHistoricalTeams(): HistoricalTeamEdition[] {
       teamName: countryMeta.name,
       country: countryMeta.name,
       flag: countryMeta.flag,
-      year: rawData.copa,
+      year: yearVal,
       editionId,
       squad,
     });
@@ -224,4 +247,64 @@ export function loadAllJsonHistoricalTeams(): HistoricalTeamEdition[] {
 
   // Sort by year descending, then team name
   return teams.sort((a, b) => b.year - a.year || a.teamName.localeCompare(b.teamName));
+}
+
+export function loadAllLaligaTeams(): HistoricalTeamEdition[] {
+  // Load La Liga team JSONs from src/data-json/Laliga Edition/
+  const jsonFiles = import.meta.glob<RawJsonTeam>('../data-json/Laliga Edition/*.json', { eager: true });
+  
+  const teams: HistoricalTeamEdition[] = [];
+
+  for (const path in jsonFiles) {
+    const rawData = jsonFiles[path];
+    if (!rawData || !rawData.sel || !Array.isArray(rawData.squad)) {
+      continue;
+    }
+
+    const clubMeta = COUNTRY_METADATA[rawData.sel] || {
+      name: rawData.sel,
+      flag: '⚽',
+      primaryColor: '#004D98',
+      secondaryColor: '#FFFFFF',
+    };
+
+    const teamId = clubMeta.name.toLowerCase().replace(/\s+/g, '-');
+    const yearVal = 2026;
+    const editionId = `laliga-${rawData.copa || '2026-27'}`;
+    const historicalId = `${teamId}-${rawData.copa || '2026-27'}`;
+
+    const squad: PlayerEditionPerformance[] = rawData.squad.map((p: RawJsonPlayer, idx: number) => {
+      const primaryPos = mapPosition(p.positions && p.positions[0] ? p.positions[0] : 'CA');
+      const secondaryPos = mapSecondaryPositions(p.positions || []);
+      const attrs = deriveAttributes(primaryPos, p.force || 75);
+
+      return {
+        id: `${historicalId}-${p.playerId || idx}`,
+        playerId: p.playerId || `${teamId}-${idx}`,
+        name: formatPlayerName(p.name, p.playerId),
+        teamId,
+        editionId,
+        position: primaryPos,
+        secondaryPositions: secondaryPos,
+        overall: p.force || 75,
+        isLegend: p.legend === true,
+        ...attrs,
+        appearances: Math.floor(Math.random() * 4) + 3,
+        goals: p.positions?.includes('CA') || p.positions?.includes('PD') || p.positions?.includes('PE') ? Math.floor(Math.random() * 4) : 0,
+      };
+    });
+
+    teams.push({
+      id: historicalId,
+      teamId,
+      teamName: clubMeta.name,
+      country: clubMeta.name,
+      flag: clubMeta.flag,
+      year: yearVal,
+      editionId,
+      squad,
+    });
+  }
+
+  return teams.sort((a, b) => a.teamName.localeCompare(b.teamName));
 }

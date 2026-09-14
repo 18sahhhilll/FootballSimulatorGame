@@ -1,0 +1,347 @@
+{
+  "sel": "BET",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "alvaro-valles",
+      "name": "Álvaro Valles",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "pau-lopez",
+      "name": "Pau López",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "diego-conde",
+      "name": "Diego Conde",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 25,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "guilherme-fernandes",
+      "name": "G. Fernandes",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 30,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "hector-bellerin",
+      "name": "Bellerín",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 2,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "diego-llorente",
+      "name": "D. Llorente",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 3,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "natan",
+      "name": "Natan",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "marc-bartra",
+      "name": "Bartra",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "valentin-gomez",
+      "name": "V. Gómez",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 16,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "fran-garcia",
+      "name": "Fran García",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 11,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "junior-firpo",
+      "name": "Junior Firpo",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 23,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "angel-ortiz",
+      "name": "Ángel Ortiz",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 12,
+      "force": 69,
+      "legend": false
+    },
+    {
+      "playerId": "facundo-bernal",
+      "name": "Bernal",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 6,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "pablo-fornals",
+      "name": "Fornals",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI",
+        "MD"
+      ],
+      "number": 8,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "sergi-altimira",
+      "name": "Altimira",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 14,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "marc-roca",
+      "name": "Marc Roca",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 21,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "isco",
+      "name": "Isco",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 22,
+      "force": 83,
+      "legend": true
+    },
+    {
+      "playerId": "giovani-lo-celso",
+      "name": "Lo Celso",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 20,
+      "force": 81,
+      "legend": false
+    },
+    {
+      "playerId": "nelson-deossa",
+      "name": "Deossa",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI",
+        "ME"
+      ],
+      "number": 18,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "dani-ceballos",
+      "name": "Ceballos",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 10,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "rodrigo-riquelme",
+      "name": "R. Riquelme",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "ME",
+        "PE"
+      ],
+      "number": 17,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "carlos-guirao",
+      "name": "Guirao",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 28,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "antony",
+      "name": "Antony",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 7,
+      "force": 81,
+      "legend": false
+    },
+    {
+      "playerId": "ez-abde",
+      "name": "Abde",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 10,
+      "force": 79,
+      "legend": false
+    },
+    {
+      "playerId": "cucho-hernandez",
+      "name": "Cucho",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 80,
+      "legend": false
+    },
+    {
+      "playerId": "aitor-ruibal",
+      "name": "Aitor Ruibal",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "MD",
+        "LD"
+      ],
+      "number": 24,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "troy-parrott",
+      "name": "Parrott",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 19,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "iker-losada",
+      "name": "Iker Losada",
+      "sel": "BET",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "MEI"
+      ],
+      "number": 15,
+      "force": 74,
+      "legend": false
+    }
+  ]
+}

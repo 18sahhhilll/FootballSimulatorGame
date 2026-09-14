@@ -1,0 +1,381 @@
+{
+  "sel": "ELC",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "matias-dituro",
+      "name": "Dituro",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "alejandro-iturbe",
+      "name": "Iturbe",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "inaki-pena",
+      "name": "Iñaki Peña",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 25,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "david-affengruber",
+      "name": "Affengruber",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 4,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "victor-chust",
+      "name": "Víctor Chust",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "matia-barzic",
+      "name": "Baržić",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 6,
+      "force": 70,
+      "legend": false
+    },
+    {
+      "playerId": "john-donald",
+      "name": "Donald",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 12,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "bambo-diaby",
+      "name": "Diaby",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 15,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "pedro-bigas",
+      "name": "Bigas",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 22,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "buba-sangare",
+      "name": "Sangaré",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 2,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "kevin-lomonaco",
+      "name": "Lomónaco",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 14,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "ruben-sanchez",
+      "name": "Rubén Sánchez",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 16,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "roy-revivo",
+      "name": "Revivo",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 3,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "marc-aguado",
+      "name": "Marc Aguado",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "federico-redondo",
+      "name": "Redondo",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 18,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "martim-neto",
+      "name": "Martim Neto",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 20,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "gonzalo-villar",
+      "name": "Gonzalo Villar",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 21,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "luca-de-la-torre",
+      "name": "De la Torre",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 23,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "ali-houary",
+      "name": "Houary",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 27,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "german-valera",
+      "name": "Valera",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 11,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "lucas-cepeda",
+      "name": "Cepeda",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 17,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "tete-morente",
+      "name": "Tete Morente",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "PD"
+      ],
+      "number": 7,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "josan",
+      "name": "Josan",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MD",
+        "LD"
+      ],
+      "number": 19,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "ezequiel-ponce",
+      "name": "Ponce",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "fabio-nino",
+      "name": "Fabio Niño",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 24,
+      "force": 70,
+      "legend": false
+    },
+    {
+      "playerId": "diego-buonanotte",
+      "name": "Buonanotte",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 10,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "thomas-lemar",
+      "name": "Lemar",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "MEI",
+        "PE"
+      ],
+      "number": 26,
+      "force": 78,
+      "legend": true
+    },
+    {
+      "playerId": "morcillo",
+      "name": "Morcillo",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 28,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "umaru",
+      "name": "Umaru",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 29,
+      "force": 64,
+      "legend": false
+    },
+    {
+      "playerId": "osorio",
+      "name": "Osorio",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 30,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "padilla",
+      "name": "Padilla",
+      "sel": "ELC",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 31,
+      "force": 63,
+      "legend": false
+    }
+  ]
+}

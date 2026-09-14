@@ -1,0 +1,370 @@
+{
+  "sel": "EPN",
+  "copa": "2026-27",
+  "squad": [
+    {
+      "playerId": "marko-dmitrovic",
+      "name": "Dmitrović",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 1,
+      "force": 77,
+      "legend": false
+    },
+    {
+      "playerId": "angel-fortuno",
+      "name": "Fortuño",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "GOL"
+      ],
+      "number": 13,
+      "force": 69,
+      "legend": false
+    },
+    {
+      "playerId": "ruben-sanchez",
+      "name": "Rubén Sánchez",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 2,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "quilindschy-hartman",
+      "name": "Hartman",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 3,
+      "force": 78,
+      "legend": false
+    },
+    {
+      "playerId": "urko-gonzalez",
+      "name": "Urko Glez",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG",
+        "MEI"
+      ],
+      "number": 4,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "clemens-riedel",
+      "name": "Riedel",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 5,
+      "force": 73,
+      "legend": false
+    },
+    {
+      "playerId": "leandro-cabrera",
+      "name": "Cabrera",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 6,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "miguel-rubio",
+      "name": "Miguel Rubio",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 14,
+      "force": 74,
+      "legend": false
+    },
+    {
+      "playerId": "vanja-drkusic",
+      "name": "Drkušić",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 15,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "jose-salinas",
+      "name": "Salinas",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 12,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "javi-hernandez",
+      "name": "Javi Hdez",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 22,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "jose-angel",
+      "name": "José Ángel",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "ZAG"
+      ],
+      "number": 24,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "edu-exposito",
+      "name": "Edu Expósito",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 8,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "pol-lozano",
+      "name": "Pol Lozano",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 10,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "antoniu-roca",
+      "name": "Antoniu Roca",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "MD",
+        "PD"
+      ],
+      "number": 16,
+      "force": 71,
+      "legend": false
+    },
+    {
+      "playerId": "jofre-carreras",
+      "name": "Jofre",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "PD"
+      ],
+      "number": 17,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "jose-gragera",
+      "name": "Gragera",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 18,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "roberto-fernandez",
+      "name": "R. Fernández",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 20,
+      "force": 72,
+      "legend": false
+    },
+    {
+      "playerId": "llorenc",
+      "name": "Llorenç",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 26,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "gabriel-moscardo",
+      "name": "Moscardó",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 27,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "rafael-bauza",
+      "name": "Bauzà",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "MEI"
+      ],
+      "number": 28,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "javi-puado",
+      "name": "Puado",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "PE",
+        "CA"
+      ],
+      "number": 7,
+      "force": 79,
+      "legend": true
+    },
+    {
+      "playerId": "pere-milla",
+      "name": "Pere Milla",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "PE"
+      ],
+      "number": 11,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "kike-garcia",
+      "name": "Kike García",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 9,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "tyrhys-dolan",
+      "name": "Dolan",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "PD",
+        "PE"
+      ],
+      "number": 19,
+      "force": 75,
+      "legend": false
+    },
+    {
+      "playerId": "omar-el-hilali",
+      "name": "El Hilali",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "LD"
+      ],
+      "number": 23,
+      "force": 76,
+      "legend": false
+    },
+    {
+      "playerId": "pablo-roman",
+      "name": "Pablo Román",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 29,
+      "force": 65,
+      "legend": false
+    },
+    {
+      "playerId": "omar-sadik",
+      "name": "Sadik",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 31,
+      "force": 66,
+      "legend": false
+    },
+    {
+      "playerId": "timera",
+      "name": "Timera",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "CA"
+      ],
+      "number": 33,
+      "force": 63,
+      "legend": false
+    },
+    {
+      "playerId": "r-hinojo",
+      "name": "Hinojo",
+      "sel": "EPN",
+      "copa": "2026-27",
+      "positions": [
+        "LE"
+      ],
+      "number": 34,
+      "force": 64,
+      "legend": false
+    }
+  ]
+}
