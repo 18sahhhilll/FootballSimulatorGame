@@ -16,7 +16,7 @@ import {
 } from '../engine/draftEngine';
 import { calculatePositionFit, calculateSquadRatings } from '../engine/ratingEngine';
 import { calculateChemistry } from '../engine/chemistryEngine';
-import { loadAllJsonHistoricalTeams } from '../data/jsonLoader';
+import { loadTeamsForEdition } from '../data/jsonLoader';
 import { FootballPitch } from '../components/football/FootballPitch';
 import { FormationSelector } from '../components/football/FormationSelector';
 import { InlineSquadPicker } from '../components/draft/InlineSquadPicker';
@@ -78,7 +78,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     setSelectedPlacement(null);
 
     setTimeout(() => {
-      const { selectedTeam } = getRandomHistoricalTeamForSpin();
+      const { selectedTeam } = getRandomHistoricalTeamForSpin(editionId);
       setSpunTeam(selectedTeam);
       setIsSpinning(false);
       setHasSpun(true);
@@ -98,7 +98,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     setSelectedPlacement(null);
 
     setTimeout(() => {
-      const allTeams = loadAllJsonHistoricalTeams();
+      const allTeams = loadTeamsForEdition(editionId);
       const candidates = allTeams.filter(t => t.year === spunTeam.year && t.teamId.toLowerCase() !== spunTeam.teamId.toLowerCase());
       
       const nextTeam = candidates.length > 0 
@@ -124,7 +124,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     setSelectedPlacement(null);
 
     setTimeout(() => {
-      const allTeams = loadAllJsonHistoricalTeams();
+      const allTeams = loadTeamsForEdition(editionId);
       const candidates = allTeams.filter(t => t.teamId.toLowerCase() === spunTeam.teamId.toLowerCase() && t.year !== spunTeam.year);
       
       const nextTeam = candidates.length > 0 

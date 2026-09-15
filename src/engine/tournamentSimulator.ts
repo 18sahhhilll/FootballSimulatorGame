@@ -7,7 +7,7 @@ import {
   TournamentPlayerStats,
   HistoricalTeamEdition 
 } from '../types/football';
-import { loadAllJsonHistoricalTeams } from '../data/jsonLoader';
+import { loadTeamsForEdition } from '../data/jsonLoader';
 import { buildBestPlayingXI } from './draftEngine';
 import { calculateSquadRatings } from './ratingEngine';
 import { calculateChemistry } from './chemistryEngine';
@@ -19,8 +19,8 @@ const opponentStatsMap = new Map<string, SimulatedTeamStats>();
 export function initializeTournament(editionId: string, userSquad: UserSquad): TournamentState {
   opponentStatsMap.clear();
 
-  // Load all authentic historical team editions from JSON dataset (177 editions)
-  const allJsonTeams = loadAllJsonHistoricalTeams();
+  // Load authentic team editions for the selected competition mode (World Cup vs La Liga)
+  const allJsonTeams = loadTeamsForEdition(editionId);
   
   // Group all dataset editions by country key (e.g. 'italy', 'brazil', 'germany')
   const countryMap = new Map<string, HistoricalTeamEdition[]>();

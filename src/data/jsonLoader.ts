@@ -188,9 +188,9 @@ function deriveAttributes(pos: Position, force: number) {
   };
 }
 
-export function loadAllJsonHistoricalTeams(): HistoricalTeamEdition[] {
-  // Load team JSONs from all subdirectories in src/data-json/ (World Cup Edition, Laliga Edition, etc.)
-  const jsonFiles = import.meta.glob<RawJsonTeam>('../data-json/**/*.json', { eager: true });
+export function loadAllWorldCupTeams(): HistoricalTeamEdition[] {
+  // Load team JSONs strictly from src/data-json/World Cup Edition/
+  const jsonFiles = import.meta.glob<RawJsonTeam>('../data-json/World Cup Edition/*.json', { eager: true });
   
   const teams: HistoricalTeamEdition[] = [];
 
@@ -250,7 +250,7 @@ export function loadAllJsonHistoricalTeams(): HistoricalTeamEdition[] {
 }
 
 export function loadAllLaligaTeams(): HistoricalTeamEdition[] {
-  // Load La Liga team JSONs from src/data-json/Laliga Edition/
+  // Load La Liga team JSONs strictly from src/data-json/Laliga Edition/
   const jsonFiles = import.meta.glob<RawJsonTeam>('../data-json/Laliga Edition/*.json', { eager: true });
   
   const teams: HistoricalTeamEdition[] = [];
@@ -307,4 +307,16 @@ export function loadAllLaligaTeams(): HistoricalTeamEdition[] {
   }
 
   return teams.sort((a, b) => a.teamName.localeCompare(b.teamName));
+}
+
+export function loadTeamsForEdition(editionId?: string): HistoricalTeamEdition[] {
+  if (editionId === 'la-liga-mode') {
+    return loadAllLaligaTeams();
+  }
+  // Default and 'world-cup-mode' -> World Cup Edition teams only
+  return loadAllWorldCupTeams();
+}
+
+export function loadAllJsonHistoricalTeams(editionId?: string): HistoricalTeamEdition[] {
+  return loadTeamsForEdition(editionId);
 }

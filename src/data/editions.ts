@@ -41,8 +41,8 @@ export const COMPETITION_EDITIONS: Edition[] = [
     hostCountry: 'Spain',
     hostFlag: '🇪🇸',
     teams: [],
-    isAvailable: false,
-    description: 'Spin legendary Spanish league contenders across La Liga history.',
+    isAvailable: true,
+    description: 'Spin legendary Spanish league clubs to build your XI and compete for the La Liga trophy.',
     badge: '🇪🇸 LALIGA'
   }
 ];
