@@ -13,6 +13,17 @@ export const COMPETITION_EDITIONS: Edition[] = [
     badge: '🌎 WORLD CUP'
   },
   {
+    id: 'la-liga-mode',
+    name: 'La Liga',
+    type: 'LA_LIGA',
+    hostCountry: 'Spain',
+    hostFlag: '🇪🇸',
+    teams: [],
+    isAvailable: true,
+    description: 'Spin legendary Spanish league clubs to build your XI and compete for the La Liga trophy.',
+    badge: '🇪🇸 LALIGA'
+  },
+  {
     id: 'champions-league-mode',
     name: 'UEFA Champions League',
     type: 'CHAMPIONS_LEAGUE',
@@ -33,17 +44,6 @@ export const COMPETITION_EDITIONS: Edition[] = [
     isAvailable: false,
     description: 'Spin iconic English top-flight champions (Invincibles 2004, Man City 100pts 2018, Man Utd 1999).',
     badge: '🦁 PL'
-  },
-  {
-    id: 'la-liga-mode',
-    name: 'La Liga',
-    type: 'LA_LIGA',
-    hostCountry: 'Spain',
-    hostFlag: '🇪🇸',
-    teams: [],
-    isAvailable: true,
-    description: 'Spin legendary Spanish league clubs to build your XI and compete for the La Liga trophy.',
-    badge: '🇪🇸 LALIGA'
   }
 ];
 
