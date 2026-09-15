@@ -6,9 +6,11 @@ import {
   simulateLaligaMatchday, 
   calculateLaligaAwards 
 } from '../engine/laligaSimulator';
+import { useNavigate } from 'react-router-dom';
 import { 
   loadLaligaStateFromStorage, 
-  saveLaligaStateToStorage 
+  saveLaligaStateToStorage,
+  loadUserSquadFromStorage 
 } from '../utils/storage';
 import { getTeamLogoUrl, getLaligaLogoUrl } from '../utils/teamLogos';
 import { LaligaMatchdayView } from '../components/laliga/LaligaMatchdayView';
@@ -20,18 +22,28 @@ import { MatchSummaryModal } from '../components/simulation/MatchSummaryModal';
 import { Trophy, Calendar, FastForward, LayoutGrid, Award, Shield, Zap, Tv, RotateCcw, Crown } from 'lucide-react';
 
 interface LaligaPageProps {
-  userSquad: UserSquad;
-  onRestart: () => void;
+  userSquad?: UserSquad | null;
+  onRestart?: () => void;
 }
 
 export const LaligaPage: React.FC<LaligaPageProps> = ({
-  userSquad,
+  userSquad: initialUserSquad,
   onRestart,
 }) => {
+  const navigate = useNavigate();
+  const userSquad = initialUserSquad || loadUserSquadFromStorage();
+
+  useEffect(() => {
+    if (!userSquad) {
+      navigate('/');
+    }
+  }, [userSquad, navigate]);
+
   const ACCENT = '#C9F31D';
   const GOLD = '#F2B705';
 
   const [laligaState, setLaligaState] = useState<LaligaState | null>(() => {
+    if (!userSquad) return null;
     const saved = loadLaligaStateFromStorage();
     if (saved && saved.userSquad?.editionId === userSquad.editionId) {
       return saved;
@@ -52,7 +64,7 @@ export const LaligaPage: React.FC<LaligaPageProps> = ({
     }
   }, [laligaState]);
 
-  if (!laligaState) return null;
+  if (!laligaState || !userSquad) return null;
 
   const totalMatchdays = laligaState.matchdays.length;
   const firstIncompleteIndex = laligaState.matchdays.findIndex(md => !md.completed);

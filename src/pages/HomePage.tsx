@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { COMPETITION_EDITIONS } from '../data/editions';
-import { getLaligaLogoUrl } from '../utils/teamLogos';
+import { getLaligaLogoUrl, getPremierLeagueLogoUrl, getUefaLogoUrl, getFifaLogoUrl } from '../utils/teamLogos';
 import { LaligaSeasonSelectModal } from '../components/laliga/LaligaSeasonSelectModal';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Sparkles } from 'lucide-react';
 
 interface HomePageProps {
-  onSelectEdition: (editionId: string) => void;
+  onSelectEdition?: (editionId: string) => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
+  const navigate = useNavigate();
   const ACCENT = '#C9F31D';
   const [isLaligaModalOpen, setIsLaligaModalOpen] = useState(false);
   const [selectedSeason, setSelectedSeason] = useState('2026-27');
@@ -17,13 +19,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
     if (editionId === 'la-liga-mode') {
       setIsLaligaModalOpen(true);
     } else {
-      onSelectEdition(editionId);
+      if (onSelectEdition) onSelectEdition(editionId);
+      navigate(`/draft/${editionId}`);
     }
   };
 
   const handleConfirmLaliga = () => {
     setIsLaligaModalOpen(false);
-    onSelectEdition('la-liga-mode');
+    if (onSelectEdition) onSelectEdition('la-liga-mode');
+    navigate('/draft/la-liga-mode');
   };
 
   return (
@@ -42,26 +46,24 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <button
-            onClick={() => onSelectEdition('world-cup-mode')}
-            className="fx-btn px-8 py-4 text-black flex items-center gap-2 text-lg cursor-pointer"
+            onClick={() => {
+              const editionsEl = document.getElementById('editions-section');
+              if (editionsEl) {
+                editionsEl.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                handleCardClick('world-cup-mode');
+              }
+            }}
+            className="fx-btn px-8 py-4 text-black flex items-center gap-2.5 text-lg cursor-pointer font-extrabold uppercase tracking-wider shadow-xl"
             style={{ background: ACCENT }}
           >
-            WORLD CUP DRAFT <ChevronRight size={20} />
-          </button>
-
-          <button
-            onClick={() => setIsLaligaModalOpen(true)}
-            className="fx-btn px-8 py-4 text-white bg-white/10 hover:bg-white/20 border border-white/20 flex items-center gap-2.5 text-lg cursor-pointer"
-          >
-            {getLaligaLogoUrl() && (
-              <img src={getLaligaLogoUrl()} alt="LaLiga" className="w-6 h-6 object-contain shrink-0" />
-            )}
-            <span>LALIGA LEAGUE</span> <ChevronRight size={20} />
+            <Sparkles className="w-5 h-5 fill-current" />
+            <span>BUILD DRAFT</span> <ChevronRight size={20} />
           </button>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto w-full px-6 pb-16">
+      <div id="editions-section" className="max-w-5xl mx-auto w-full px-6 pb-16">
         <div className="text-xs fx-display font-bold tracking-[0.15em] text-white/40 mb-3 uppercase">EDITIONS</div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {COMPETITION_EDITIONS.map(e => (
@@ -73,8 +75,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
               }`}
             >
               <div>
-                {e.id === 'la-liga-mode' && getLaligaLogoUrl() ? (
+                {e.id === 'world-cup-mode' && getFifaLogoUrl() ? (
+                  <img src={getFifaLogoUrl()} alt="FIFA" className="h-8 object-contain mb-1" />
+                ) : e.id === 'la-liga-mode' && getLaligaLogoUrl() ? (
                   <img src={getLaligaLogoUrl()} alt="LaLiga" className="w-8 h-8 object-contain mb-1" />
+                ) : e.id === 'premier-league-mode' && getPremierLeagueLogoUrl() ? (
+                  <img src={getPremierLeagueLogoUrl()} alt="Premier League" className="h-10 sm:h-12 object-contain mb-1 max-w-[160px] sm:max-w-[200px]" />
+                ) : e.id === 'champions-league-mode' && getUefaLogoUrl() ? (
+                  <img src={getUefaLogoUrl()} alt="UEFA Champions League" className="h-8 object-contain mb-1 rounded" />
                 ) : (
                   <div className="text-3xl">{e.hostFlag}</div>
                 )}

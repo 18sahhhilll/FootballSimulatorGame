@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { 
   FormationId, 
   DraftSlot, 
@@ -25,9 +26,9 @@ import { DraftSummaryPanel } from '../components/draft/DraftSummaryPanel';
 import { ArrowLeft, RotateCcw, Shuffle, Sparkles, LayoutGrid, Award, Shield } from 'lucide-react';
 
 interface DraftPageProps {
-  editionId: string;
-  onBack: () => void;
-  onCompleteDraft: (squad: UserSquad) => void;
+  editionId?: string;
+  onBack?: () => void;
+  onCompleteDraft?: (squad: UserSquad) => void;
 }
 
 export const DraftPage: React.FC<DraftPageProps> = ({
@@ -35,7 +36,11 @@ export const DraftPage: React.FC<DraftPageProps> = ({
   onBack,
   onCompleteDraft,
 }) => {
-  const compEdition = COMPETITION_EDITIONS.find(e => e.id === editionId) || COMPETITION_EDITIONS[0];
+  const { editionId: routeEditionId } = useParams<{ editionId: string }>();
+  const navigate = useNavigate();
+  const activeEditionId = routeEditionId || editionId || 'world-cup-mode';
+
+  const compEdition = COMPETITION_EDITIONS.find(e => e.id === activeEditionId) || COMPETITION_EDITIONS[0];
   const ACCENT = '#C9F31D';
 
   const [formation, setFormation] = useState<FormationId>('4-3-3');
@@ -79,7 +84,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     setSelectedPlacement(null);
 
     setTimeout(() => {
-      const { selectedTeam } = getRandomHistoricalTeamForSpin(editionId);
+      const { selectedTeam } = getRandomHistoricalTeamForSpin(activeEditionId);
       setSpunTeam(selectedTeam);
       setIsSpinning(false);
       setHasSpun(true);
@@ -99,7 +104,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     setSelectedPlacement(null);
 
     setTimeout(() => {
-      const allTeams = loadTeamsForEdition(editionId);
+      const allTeams = loadTeamsForEdition(activeEditionId);
       const candidates = allTeams.filter(t => t.year === spunTeam.year && t.teamId.toLowerCase() !== spunTeam.teamId.toLowerCase());
       
       const nextTeam = candidates.length > 0 
@@ -125,7 +130,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     setSelectedPlacement(null);
 
     setTimeout(() => {
-      const allTeams = loadTeamsForEdition(editionId);
+      const allTeams = loadTeamsForEdition(activeEditionId);
       const candidates = allTeams.filter(t => t.teamId.toLowerCase() === spunTeam.teamId.toLowerCase() && t.year !== spunTeam.year);
       
       const nextTeam = candidates.length > 0 
@@ -315,7 +320,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
     if (!isDraftComplete) return;
 
     const squad: UserSquad = {
-      editionId,
+      editionId: activeEditionId,
       userTeamName: 'FANTASY XI',
       userTeamFlag: '⭐',
       formation,
@@ -328,7 +333,12 @@ export const DraftPage: React.FC<DraftPageProps> = ({
       chemistry,
     };
 
-    onCompleteDraft(squad);
+    if (onCompleteDraft) onCompleteDraft(squad);
+    if (activeEditionId === 'la-liga-mode') {
+      navigate('/laliga');
+    } else {
+      navigate('/tournament');
+    }
   };
 
   const openCompatibleSlots = selectedPlacement
@@ -351,7 +361,10 @@ export const DraftPage: React.FC<DraftPageProps> = ({
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 mb-4 sm:mb-6">
         <div className="flex items-center space-x-3">
           <button
-            onClick={onBack}
+            onClick={() => {
+              if (onBack) onBack();
+              navigate('/');
+            }}
             className="p-2 rounded-lg bg-white/10 border border-white/20 text-white/80 hover:text-white transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -466,7 +479,7 @@ export const DraftPage: React.FC<DraftPageProps> = ({
                     {spunTeam.teamName}
                   </h2>
                   <div className="text-sm sm:text-base fx-display font-extrabold tracking-tight" style={{ color: ACCENT }}>
-                    {editionId === 'la-liga-mode' ? `LaLiga ${spunTeam.year}` : `World Cup ${spunTeam.year}`}
+                    {activeEditionId === 'la-liga-mode' ? `LaLiga ${spunTeam.year}` : `World Cup ${spunTeam.year}`}
                   </div>
                 </div>
               </div>

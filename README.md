@@ -1,12 +1,26 @@
 # ⚽ Football Edition — Squad Building, World Cup & La Liga Simulator
 
-A feature-rich, interactive football squad drafting and simulation web application built with **React 18**, **TypeScript**, **Tailwind CSS**, and **Vite**. Features both **World Cup Knockout Tournament Edition** and **La Liga Season Edition**.
+A feature-rich, interactive football squad drafting and simulation web application built with **React 18**, **React Router v7**, **TypeScript**, **Tailwind CSS**, and **Vite**. Features both **World Cup Knockout Tournament Edition** and **La Liga Season Edition**.
 
 ![Football Simulator Banner](https://img.shields.io/badge/Football-Simulator-C9F31D?style=for-the-badge&logo=soccer&logoColor=black)
 ![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![React Router](https://img.shields.io/badge/React_Router-7.1-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-6.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+---
+
+## 🌐 Navigation & URL Routing
+
+The application features clean client-side routing via **`react-router-dom`**:
+
+- **`/`** — Home page with competition edition selection (World Cup, La Liga, Premier League, UEFA Champions League).
+- **`/draft/:editionId`** — Interactive Draft Engine & Historical Team Spin Roulette (`/draft/world-cup-mode`, `/draft/la-liga-mode`).
+- **`/tournament`** — World Cup Group Stage, Knockouts, and Tournament Awards simulator.
+- **`/laliga`** — 38-Matchday La Liga League Season simulator.
+
+State (squad draft, matchday progress, league table) persists seamlessly across page refreshes via local storage.
 
 ---
 
@@ -14,7 +28,7 @@ A feature-rich, interactive football squad drafting and simulation web applicati
 
 ### 🇪🇸 1. La Liga Season Edition
 - **Authentic 21-Team League Competition**: 20 authentic La Liga clubs + 1 user Fantasy XI (21 teams total).
-- **Full 38-Matchday Fixture List**: Double round-robin league schedule containing 380 matches. No knockout rounds or semi-finals; winner is decided by final league points.
+- **Full 38-Matchday Fixture List**: Double round-robin league schedule containing 380 matches. Winner is decided by final league points.
 - **Fixed Official Managers & Tactical Formations**:
   - *FC Barcelona*: Hansi Flick (`4-3-3`)
   - *Real Madrid*: José Mourinho (`4-4-2`)
@@ -24,9 +38,9 @@ A feature-rich, interactive football squad drafting and simulation web applicati
   - *Real Sociedad*: Pellegrino Matarazzo (`4-2-2-2`)
   - *Rayo Vallecano*: Beñat San José (`4-2-2-2`)
   - *Celta Vigo*, *Real Betis*, *Villarreal*, *Valencia*, *Getafe*, *Osasuna*, *Alavés*, *Espanyol*, *Elche*, *Levante*, *Málaga*, *Racing Santander*, *Deportivo La Coruña*.
-- **Red Card Suspensions**: Players receiving a red card are automatically suspended for 1 match and replaced by the highest-rated available player for that position.
-- **Unrestricted Matchday Browsing & Sequential Simulation**: Browse fixtures for all 38 matchdays at any time, while simulation is sequentially restricted until earlier matchdays complete.
-- **Official Team & League Branding**: Includes high-resolution PNG logos for all La Liga clubs, official **La Liga** branding, and custom **Fantasy 11** user logo.
+- **Red Card Suspensions**: Players receiving a red card are automatically suspended for 1 match and replaced by the highest-rated available squad player for that position.
+- **Unrestricted Matchday Browsing & Sequential Simulation**: Browse fixtures for all 38 matchdays at any time, with simulation restricted sequentially until earlier matchdays complete.
+- **Official Club & Federation Branding**: Includes official logos for La Liga, Premier League, UEFA, FIFA, club crests, and custom Fantasy 11 user logo.
 - **League Standings & European Qualifications**: Real-time table sorting with UEFA Champions League (1-4), Europa League (5), Conference League (6), and Relegation (18-21) indicators.
 - **Season Awards**: Pichichi Trophy (Top Scorer), Top Assists, Zamora Trophy (Best Keeper), and Player of the Season.
 
@@ -34,6 +48,7 @@ A feature-rich, interactive football squad drafting and simulation web applicati
 
 ### 🏆 2. World Cup Edition
 - **177 Historical World Cup Teams**: Ingests team datasets spanning 1970 to 2026.
+- **FlagCDN Integration**: Renders crisp 160px CDN flag assets across all 46 national teams with uniform aspect ratio styling (`object-cover rounded shadow-sm`).
 - **Knockout Tournament Format**: Group stage followed by Quarter Finals, Semi Finals, 3rd Place Match, and Final.
 - **Spin & Draft System**: Draw random historical teams with orthogonal rerolls (*Another Team* / *Another Season*).
 - **Extra Time & Penalty Shootouts**: Level knockout ties trigger 30 minutes of Extra Time and penalty kicks.
@@ -56,6 +71,7 @@ A feature-rich, interactive football squad drafting and simulation web applicati
 ## 🛠️ Tech Stack
 
 - **Frontend Framework**: [React 18](https://react.dev/)
+- **Routing**: [React Router v7](https://reactrouter.com/)
 - **Language**: [TypeScript 5.7](https://www.typescriptlang.org/)
 - **Build Tool**: [Vite 6](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/)
@@ -104,21 +120,22 @@ Ensure you have [Node.js](https://nodejs.org/) (v18 or higher recommended) and `
 
 ```
 c:\Projects\FootBallSimulator\
-├── public/                  # Static assets
+├── public/                  # Static assets & icons
 ├── src/
 │   ├── components/          # Reusable UI & game components
 │   │   ├── draft/           # Squad picker, spin modal, summary panels
 │   │   ├── football/        # Interactive pitch, formation selector
 │   │   ├── laliga/          # Matchday schedule, standings table, team details, awards
+│   │   ├── layout/          # Sticky Navbar & header layout components
 │   │   └── simulation/      # Scorecards, live match, tournament bracket, leaderboards
 │   ├── data/                # Dataset loaders & edition metadata
 │   ├── data-json/           # La Liga & World Cup JSON squad datasets
-│   ├── engine/              # Simulation engines (La Liga simulator, match simulator, draft engine)
-│   ├── images/              # Team logo PNGs & La Liga branding assets
-│   ├── pages/               # Main views (Home, Draft, Tournament, La Liga)
+│   ├── engine/              # Simulation engines (La Liga, match, draft, ratings)
+│   ├── images/              # Official logos (La Liga, Premier League, UEFA, FIFA)
+│   ├── pages/               # Main route views (Home, Draft, Tournament, La Liga)
 │   ├── types/               # TypeScript interfaces & models (football.ts)
 │   ├── utils/               # Storage helpers, team logo resolvers, formatters
-│   ├── App.tsx              # Root component & main router
+│   ├── App.tsx              # Root router configuration
 │   └── main.tsx             # Application entry point
 ├── package.json             # Dependencies and build scripts
 ├── tailwind.config.js       # Custom Tailwind theme configuration

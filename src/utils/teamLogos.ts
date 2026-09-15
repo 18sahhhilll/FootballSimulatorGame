@@ -1,5 +1,8 @@
 // Helper utility to resolve La Liga & World Cup team logos (via Flagcdn for World Cup national flags)
 const laligaLogoGlob = import.meta.glob<string>('../images/laliga-teams/*.png', { eager: true, import: 'default' });
+const plLogoGlob = import.meta.glob<string>('../images/Premier League/*.png', { eager: true, import: 'default' });
+const uefaLogoGlob = import.meta.glob<string>('../images/UEFA/*.{png,jpg,jpeg}', { eager: true, import: 'default' });
+const fifaLogoGlob = import.meta.glob<string>('../images/FIFA-Logo.png', { eager: true, import: 'default' });
 
 const LOGO_MAP: Record<string, string> = {};
 
@@ -125,4 +128,25 @@ export function getTeamLogoUrl(teamId?: string, teamName?: string): string | und
 
 export function getLaligaLogoUrl(): string | undefined {
   return LOGO_MAP['laliga-logo'];
+}
+
+export function getPremierLeagueLogoUrl(): string | undefined {
+  for (const path in plLogoGlob) {
+    return plLogoGlob[path];
+  }
+  return undefined;
+}
+
+export function getUefaLogoUrl(): string | undefined {
+  for (const path in uefaLogoGlob) {
+    return uefaLogoGlob[path];
+  }
+  return undefined;
+}
+
+export function getFifaLogoUrl(): string | undefined {
+  for (const path in fifaLogoGlob) {
+    return fifaLogoGlob[path];
+  }
+  return undefined;
 }

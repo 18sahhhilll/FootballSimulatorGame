@@ -7,9 +7,11 @@ import {
   simulateKnockoutMatch,
   simulateAllKnockoutMatches 
 } from '../engine/tournamentSimulator';
+import { useNavigate } from 'react-router-dom';
 import { 
   loadTournamentStateFromStorage, 
-  saveTournamentStateToStorage 
+  saveTournamentStateToStorage,
+  loadUserSquadFromStorage
 } from '../utils/storage';
 import { GroupStageView } from '../components/simulation/GroupStageView';
 import { TournamentBracket } from '../components/simulation/TournamentBracket';
@@ -21,18 +23,28 @@ import { COMPETITION_EDITIONS } from '../data/editions';
 import { Trophy, FastForward, LayoutGrid, GitBranch, Zap, Tv, Award } from 'lucide-react';
 
 interface TournamentPageProps {
-  userSquad: UserSquad;
-  onRestart: () => void;
+  userSquad?: UserSquad | null;
+  onRestart?: () => void;
 }
 
 export const TournamentPage: React.FC<TournamentPageProps> = ({
-  userSquad,
+  userSquad: initialUserSquad,
   onRestart,
 }) => {
+  const navigate = useNavigate();
+  const userSquad = initialUserSquad || loadUserSquadFromStorage();
+
+  useEffect(() => {
+    if (!userSquad) {
+      navigate('/');
+    }
+  }, [userSquad, navigate]);
+
   const ACCENT = '#C9F31D';
   const GOLD = '#F2B705';
 
   const [tournamentState, setTournamentState] = useState<TournamentState | null>(() => {
+    if (!userSquad) return null;
     const saved = loadTournamentStateFromStorage();
     if (saved && saved.userSquad?.editionId === userSquad.editionId) {
       return saved;
@@ -52,7 +64,7 @@ export const TournamentPage: React.FC<TournamentPageProps> = ({
     }
   }, [tournamentState]);
 
-  if (!tournamentState) return null;
+  if (!tournamentState || !userSquad) return null;
 
   const compEdition = COMPETITION_EDITIONS.find(e => e.id === userSquad.editionId) || COMPETITION_EDITIONS[0];
   const isGroupStageDone = tournamentState.groups.every(g => g.matches.every(m => m.completed));
@@ -61,20 +73,23 @@ export const TournamentPage: React.FC<TournamentPageProps> = ({
     if (!tournamentState) return;
 
     if (simMode === 'LIVE') {
-      const updatedState = simulateGroupStageMatch(tournamentState, groupIndex, matchIndex);
-      const simulatedMatch = updatedState.groups[groupIndex].matches[matchIndex];
-
-      setTournamentState(updatedState);
-      setActiveLiveMatch(simulatedMatch);
-    } else {
-      setTournamentState(prev => prev ? simulateGroupStageMatch(prev, groupIndex, matchIndex) : prev);
+      const match = tournamentState.groups[groupIndex].matches[matchIndex];
+      if (!match.completed) {
+        setActiveLiveMatch(match);
+      }
+      return;
     }
+
+    const updated = simulateGroupStageMatch(tournamentState, groupIndex, matchIndex);
+    setTournamentState(updated);
   };
 
-  const handleSimulateAllGroups = () => {
-    setTournamentState(prev => prev ? simulateAllGroupMatches(prev) : prev);
-    setActiveTab('KNOCKOUTS');
+  const handleSimulateAllGroupMatches = () => {
+    if (!tournamentState) return;
+    const updated = simulateAllGroupMatches(tournamentState);
+    setTournamentState(updated);
   };
+  const handleSimulateAllGroups = handleSimulateAllGroupMatches;
 
   const handleSimulateKnockoutMatch = (
     stage: 'quarterFinals' | 'semiFinals' | 'thirdPlace' | 'final',
@@ -83,22 +98,25 @@ export const TournamentPage: React.FC<TournamentPageProps> = ({
     if (!tournamentState) return;
 
     if (simMode === 'LIVE') {
-      const updatedState = simulateKnockoutMatch(tournamentState, stage, matchIndex);
-      const simulatedMatch = updatedState.knockouts[stage][matchIndex];
-
-      setTournamentState(updatedState);
-      setActiveLiveMatch(simulatedMatch);
-    } else {
-      setTournamentState(prev => prev ? simulateKnockoutMatch(prev, stage, matchIndex) : prev);
+      const match = tournamentState.knockouts[stage][matchIndex];
+      if (match && !match.completed) {
+        setActiveLiveMatch(match);
+      }
+      return;
     }
+
+    const updated = simulateKnockoutMatch(tournamentState, stage, matchIndex);
+    setTournamentState(updated);
   };
 
   const handleSimulateAllKnockout = (stage: 'quarterFinals' | 'semiFinals') => {
-    setTournamentState(prev => prev ? simulateAllKnockoutMatches(prev, stage) : prev);
+    if (!tournamentState) return;
+    const updated = simulateAllKnockoutMatches(tournamentState, stage);
+    setTournamentState(updated);
   };
 
   if (tournamentState.currentStage === 'COMPLETED') {
-    return <TournamentResults state={tournamentState} onRestart={onRestart} />;
+    return <TournamentResults state={tournamentState} onRestart={onRestart || (() => {})} />;
   }
 
   return (
