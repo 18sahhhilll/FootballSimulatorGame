@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import { TournamentState } from '../../types/football';
 import { calculateLiveAwardRankings } from '../../engine/tournamentSimulator';
-import { Trophy, Award, Flame, Star, RotateCcw, Flag, Shield } from 'lucide-react';
+import { getTeamLogoUrl } from '../../utils/teamLogos';
+import { Trophy, Star, Flame, RotateCcw, Flag, Shield } from 'lucide-react';
 
 interface TournamentResultsProps {
   state: TournamentState;
@@ -27,6 +28,7 @@ export const TournamentResults: React.FC<TournamentResultsProps> = ({
 
   let winnerName = 'CHAMPION';
   let winnerFlag = '🏆';
+  let winnerTeamId: string | undefined = undefined;
   let isUserChampion = false;
 
   if (finalMatch && finalMatch.completed) {
@@ -36,9 +38,11 @@ export const TournamentResults: React.FC<TournamentResultsProps> = ({
 
     winnerName = isHomeWinner ? finalMatch.homeTeamName : finalMatch.awayTeamName;
     winnerFlag = isHomeWinner ? finalMatch.homeTeamFlag : finalMatch.awayTeamFlag;
+    winnerTeamId = isHomeWinner ? finalMatch.homeTeamId : finalMatch.awayTeamId;
     isUserChampion = isHomeWinner ? finalMatch.isUserHome || false : finalMatch.isUserAway || false;
   }
 
+  const winnerLogo = getTeamLogoUrl(winnerTeamId, winnerName);
   const { goldenBall, goldenBoot, goldenGlove } = calculateLiveAwardRankings(state.stats);
 
   const goldenBallWinner = goldenBall.length > 0 ? goldenBall[0] : null;
@@ -61,8 +65,13 @@ export const TournamentResults: React.FC<TournamentResultsProps> = ({
           <>
             <Flag size={52} className="mx-auto mb-2 text-white/40" />
             <div className="text-xs fx-display font-extrabold tracking-widest text-white/40 uppercase">TOURNAMENT CONCLUDED</div>
-            <h2 className="fx-display font-extrabold text-4xl sm:text-5xl text-white mt-1">
-              {winnerFlag} {winnerName}
+            <h2 className="fx-display font-extrabold text-4xl sm:text-5xl text-white mt-1 flex items-center justify-center gap-3">
+              {winnerLogo ? (
+                <img src={winnerLogo} alt="" className="w-14 h-9 object-cover rounded shadow-md inline-block" />
+              ) : (
+                <span>{winnerFlag}</span>
+              )}
+              <span>{winnerName}</span>
             </h2>
           </>
         )}
@@ -79,8 +88,16 @@ export const TournamentResults: React.FC<TournamentResultsProps> = ({
             </div>
             {goldenBallWinner ? (
               <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-base">{goldenBallWinner.flag}</span>
+                <div className="flex items-center gap-2">
+                  {getTeamLogoUrl(goldenBallWinner.teamId || goldenBallWinner.nationality, goldenBallWinner.teamName) ? (
+                    <img
+                      src={getTeamLogoUrl(goldenBallWinner.teamId || goldenBallWinner.nationality, goldenBallWinner.teamName)}
+                      alt=""
+                      className="w-7 h-4.5 rounded shadow-sm object-cover shrink-0"
+                    />
+                  ) : (
+                    <span className="text-base">{goldenBallWinner.flag}</span>
+                  )}
                   <h4 className="fx-display font-extrabold text-base text-white truncate">{goldenBallWinner.name}</h4>
                 </div>
                 <p className="text-[11px] text-white/40 font-mono truncate">{goldenBallWinner.teamName}</p>
@@ -106,8 +123,16 @@ export const TournamentResults: React.FC<TournamentResultsProps> = ({
             </div>
             {goldenBootWinner ? (
               <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-base">{goldenBootWinner.flag}</span>
+                <div className="flex items-center gap-2">
+                  {getTeamLogoUrl(goldenBootWinner.teamId || goldenBootWinner.nationality, goldenBootWinner.teamName) ? (
+                    <img
+                      src={getTeamLogoUrl(goldenBootWinner.teamId || goldenBootWinner.nationality, goldenBootWinner.teamName)}
+                      alt=""
+                      className="w-7 h-4.5 rounded shadow-sm object-cover shrink-0"
+                    />
+                  ) : (
+                    <span className="text-base">{goldenBootWinner.flag}</span>
+                  )}
                   <h4 className="fx-display font-extrabold text-base text-white truncate">{goldenBootWinner.name}</h4>
                 </div>
                 <p className="text-[11px] text-white/40 font-mono truncate">{goldenBootWinner.teamName}</p>
@@ -133,8 +158,16 @@ export const TournamentResults: React.FC<TournamentResultsProps> = ({
             </div>
             {goldenGloveWinner ? (
               <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-base">{goldenGloveWinner.flag}</span>
+                <div className="flex items-center gap-2">
+                  {getTeamLogoUrl(goldenGloveWinner.teamId || goldenGloveWinner.nationality, goldenGloveWinner.teamName) ? (
+                    <img
+                      src={getTeamLogoUrl(goldenGloveWinner.teamId || goldenGloveWinner.nationality, goldenGloveWinner.teamName)}
+                      alt=""
+                      className="w-7 h-4.5 rounded shadow-sm object-cover shrink-0"
+                    />
+                  ) : (
+                    <span className="text-base">{goldenGloveWinner.flag}</span>
+                  )}
                   <h4 className="fx-display font-extrabold text-base text-white truncate">{goldenGloveWinner.name}</h4>
                 </div>
                 <p className="text-[11px] text-white/40 font-mono truncate">{goldenGloveWinner.teamName}</p>

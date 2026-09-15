@@ -1,5 +1,6 @@
 import React from 'react';
 import { TournamentState, Match } from '../../types/football';
+import { getTeamLogoUrl } from '../../utils/teamLogos';
 import { Trophy, Play, FastForward, Info } from 'lucide-react';
 
 interface TournamentBracketProps {
@@ -25,6 +26,9 @@ export const TournamentBracket: React.FC<TournamentBracketProps> = ({
     idx: number
   ) => {
     const isUserMatch = match.isUserHome || match.isUserAway;
+    const homeLogo = getTeamLogoUrl(match.homeTeamId, match.homeTeamName);
+    const awayLogo = getTeamLogoUrl(match.awayTeamId, match.awayTeamName);
+
     const isHomeWinner =
       match.completed &&
       (match.homeScore > match.awayScore ||
@@ -73,7 +77,11 @@ export const TournamentBracket: React.FC<TournamentBracketProps> = ({
           }`}
         >
           <div className="flex items-center gap-2 truncate">
-            <span className="text-base">{match.homeTeamFlag}</span>
+            {homeLogo ? (
+              <img src={homeLogo} alt="" className="w-5 h-3.5 object-cover rounded-sm shadow-sm shrink-0" />
+            ) : (
+              <span className="text-base">{match.homeTeamFlag}</span>
+            )}
             <span className={`fx-display font-bold text-xs truncate ${match.isUserHome ? 'text-[#C9F31D]' : ''}`}>
               {match.homeTeamName}
             </span>
@@ -93,7 +101,11 @@ export const TournamentBracket: React.FC<TournamentBracketProps> = ({
           }`}
         >
           <div className="flex items-center gap-2 truncate">
-            <span className="text-base">{match.awayTeamFlag}</span>
+            {awayLogo ? (
+              <img src={awayLogo} alt="" className="w-5 h-3.5 object-cover rounded-sm shadow-sm shrink-0" />
+            ) : (
+              <span className="text-base">{match.awayTeamFlag}</span>
+            )}
             <span className={`fx-display font-bold text-xs truncate ${match.isUserAway ? 'text-[#C9F31D]' : ''}`}>
               {match.awayTeamName}
             </span>

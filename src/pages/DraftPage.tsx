@@ -17,6 +17,7 @@ import {
 import { calculatePositionFit, calculateSquadRatings } from '../engine/ratingEngine';
 import { calculateChemistry } from '../engine/chemistryEngine';
 import { loadTeamsForEdition } from '../data/jsonLoader';
+import { getTeamLogoUrl } from '../utils/teamLogos';
 import { FootballPitch } from '../components/football/FootballPitch';
 import { FormationSelector } from '../components/football/FormationSelector';
 import { InlineSquadPicker } from '../components/draft/InlineSquadPicker';
@@ -450,16 +451,24 @@ export const DraftPage: React.FC<DraftPageProps> = ({
           ) : (
             <div className="fx-panel p-5 sm:p-6 shadow-2xl">
               <div className="text-[10px] fx-display font-bold tracking-widest text-white/40 uppercase mb-1">
-                Drawn
+                Drawn Team
               </div>
-              <div className="text-xs fx-display font-bold text-white uppercase tracking-wider mb-0.5 flex items-center gap-2">
-                <span>{spunTeam.teamId.toUpperCase()}</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl fx-display font-black text-white tracking-tight uppercase leading-none mb-1 sm:mb-2">
-                {spunTeam.teamName}
-              </h2>
-              <div className="text-lg sm:text-xl fx-display font-extrabold tracking-tight" style={{ color: ACCENT }}>
-                {editionId === 'la-liga-mode' ? `LaLiga ${spunTeam.year}` : `World Cup ${spunTeam.year}`}
+              <div className="flex items-center gap-3 mb-2">
+                {getTeamLogoUrl(spunTeam.teamId, spunTeam.teamName) && (
+                  <img
+                    src={getTeamLogoUrl(spunTeam.teamId, spunTeam.teamName)}
+                    alt={spunTeam.teamName}
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain shrink-0"
+                  />
+                )}
+                <div>
+                  <h2 className="text-2xl sm:text-3xl fx-display font-black text-white tracking-tight uppercase leading-none mb-1">
+                    {spunTeam.teamName}
+                  </h2>
+                  <div className="text-sm sm:text-base fx-display font-extrabold tracking-tight" style={{ color: ACCENT }}>
+                    {editionId === 'la-liga-mode' ? `LaLiga ${spunTeam.year}` : `World Cup ${spunTeam.year}`}
+                  </div>
+                </div>
               </div>
 
               {/* ORTHOGONAL REROLL CONTROLS */}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { COMPETITION_EDITIONS } from '../data/editions';
+import { getLaligaLogoUrl } from '../utils/teamLogos';
 import { LaligaSeasonSelectModal } from '../components/laliga/LaligaSeasonSelectModal';
 import { ChevronRight } from 'lucide-react';
 
@@ -42,7 +43,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <button
             onClick={() => onSelectEdition('world-cup-mode')}
-            className="fx-btn px-8 py-4 text-black flex items-center gap-2 text-lg"
+            className="fx-btn px-8 py-4 text-black flex items-center gap-2 text-lg cursor-pointer"
             style={{ background: ACCENT }}
           >
             WORLD CUP DRAFT <ChevronRight size={20} />
@@ -50,9 +51,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
 
           <button
             onClick={() => setIsLaligaModalOpen(true)}
-            className="fx-btn px-8 py-4 text-white bg-white/10 hover:bg-white/20 border border-white/20 flex items-center gap-2 text-lg"
+            className="fx-btn px-8 py-4 text-white bg-white/10 hover:bg-white/20 border border-white/20 flex items-center gap-2.5 text-lg cursor-pointer"
           >
-            LALIGA LEAGUE <ChevronRight size={20} />
+            {getLaligaLogoUrl() && (
+              <img src={getLaligaLogoUrl()} alt="LaLiga" className="w-6 h-6 object-contain shrink-0" />
+            )}
+            <span>LALIGA LEAGUE</span> <ChevronRight size={20} />
           </button>
         </div>
       </div>
@@ -69,7 +73,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
               }`}
             >
               <div>
-                <div className="text-3xl">{e.hostFlag}</div>
+                {e.id === 'la-liga-mode' && getLaligaLogoUrl() ? (
+                  <img src={getLaligaLogoUrl()} alt="LaLiga" className="w-8 h-8 object-contain mb-1" />
+                ) : (
+                  <div className="text-3xl">{e.hostFlag}</div>
+                )}
                 <div className="fx-display font-extrabold text-xl mt-3">{e.name}</div>
                 <p className="text-xs text-white/50 mt-1 line-clamp-2">{e.description}</p>
               </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, ChevronRight, X } from 'lucide-react';
+import { getLaligaLogoUrl } from '../../utils/teamLogos';
 
 interface LaligaSeasonSelectModalProps {
   isOpen: boolean;
@@ -27,13 +28,17 @@ export const LaligaSeasonSelectModal: React.FC<LaligaSeasonSelectModalProps> = (
       <div className="relative w-full max-w-md fx-panel p-6 shadow-2xl flex flex-col space-y-6">
         {/* Modal Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <div className="flex items-center gap-2">
-            <Calendar className="w-5 h-5 text-[#C9F31D]" />
+          <div className="flex items-center gap-2.5">
+            {getLaligaLogoUrl() ? (
+              <img src={getLaligaLogoUrl()} alt="LaLiga" className="w-6 h-6 object-contain shrink-0" />
+            ) : (
+              <Calendar className="w-5 h-5 text-[#C9F31D]" />
+            )}
             <h2 className="fx-display font-extrabold text-base sm:text-lg text-white uppercase">
               SELECT LALIGA SEASON
             </h2>
           </div>
-          <button onClick={onClose} className="p-1 text-white/50 hover:text-white">
+          <button onClick={onClose} className="p-1 text-white/50 hover:text-white cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -60,6 +65,9 @@ export const LaligaSeasonSelectModal: React.FC<LaligaSeasonSelectModalProps> = (
                 }`}
               >
                 <div className="flex items-center gap-3">
+                  {getLaligaLogoUrl() && (
+                    <img src={getLaligaLogoUrl()} alt="LaLiga" className="w-7 h-7 object-contain shrink-0" />
+                  )}
                   <div>
                     <div className="fx-display font-extrabold text-sm sm:text-base tracking-wider">
                       LaLiga {season}

@@ -530,6 +530,7 @@ function updateLaligaPlayerStats(
       flag,
       position: p.position,
       overall: p.overall,
+      teamId: p.teamId,
       teamName: p.teamName,
       matchesPlayed: 0,
       minutesPlayed: 0,

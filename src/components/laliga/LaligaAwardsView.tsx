@@ -1,6 +1,7 @@
 import React from 'react';
 import { LaligaState } from '../../types/football';
 import { calculateLaligaAwards } from '../../engine/laligaSimulator';
+import { getTeamLogoUrl } from '../../utils/teamLogos';
 import { Award, Flame, Zap, Shield, Crown } from 'lucide-react';
 
 interface LaligaAwardsViewProps {
@@ -45,7 +46,14 @@ export const LaligaAwardsView: React.FC<LaligaAwardsViewProps> = ({ state }) => 
 
             {awards.pichichi ? (
               <div className="mt-2">
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2.5 mb-1">
+                  {getTeamLogoUrl(awards.pichichi.teamId, awards.pichichi.teamName) && (
+                    <img
+                      src={getTeamLogoUrl(awards.pichichi.teamId, awards.pichichi.teamName)}
+                      alt=""
+                      className="w-7 h-7 object-contain shrink-0"
+                    />
+                  )}
                   <div className="truncate">
                     <h3 className="fx-display font-black text-lg text-white truncate">
                       {awards.pichichi.name}
@@ -75,7 +83,14 @@ export const LaligaAwardsView: React.FC<LaligaAwardsViewProps> = ({ state }) => 
 
             {awards.topAssists ? (
               <div className="mt-2">
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2.5 mb-1">
+                  {getTeamLogoUrl(awards.topAssists.teamId, awards.topAssists.teamName) && (
+                    <img
+                      src={getTeamLogoUrl(awards.topAssists.teamId, awards.topAssists.teamName)}
+                      alt=""
+                      className="w-7 h-7 object-contain shrink-0"
+                    />
+                  )}
                   <div className="truncate">
                     <h3 className="fx-display font-black text-lg text-white truncate">
                       {awards.topAssists.name}
@@ -105,7 +120,14 @@ export const LaligaAwardsView: React.FC<LaligaAwardsViewProps> = ({ state }) => 
 
             {awards.zamora ? (
               <div className="mt-2">
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2.5 mb-1">
+                  {getTeamLogoUrl(awards.zamora.teamId, awards.zamora.teamName) && (
+                    <img
+                      src={getTeamLogoUrl(awards.zamora.teamId, awards.zamora.teamName)}
+                      alt=""
+                      className="w-7 h-7 object-contain shrink-0"
+                    />
+                  )}
                   <div className="truncate">
                     <h3 className="fx-display font-black text-lg text-white truncate">
                       {awards.zamora.name}
@@ -135,7 +157,14 @@ export const LaligaAwardsView: React.FC<LaligaAwardsViewProps> = ({ state }) => 
 
             {awards.playerOfSeason ? (
               <div className="mt-2">
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2.5 mb-1">
+                  {getTeamLogoUrl(awards.playerOfSeason.teamId, awards.playerOfSeason.teamName) && (
+                    <img
+                      src={getTeamLogoUrl(awards.playerOfSeason.teamId, awards.playerOfSeason.teamName)}
+                      alt=""
+                      className="w-7 h-7 object-contain shrink-0"
+                    />
+                  )}
                   <div className="truncate">
                     <h3 className="fx-display font-black text-lg text-white truncate">
                       {awards.playerOfSeason.name}
@@ -165,25 +194,35 @@ export const LaligaAwardsView: React.FC<LaligaAwardsViewProps> = ({ state }) => 
             {topScorers.length === 0 ? (
               <p className="text-xs text-white/40 py-4 font-mono text-center">No goals recorded yet.</p>
             ) : (
-              topScorers.map((p, idx) => (
-                <div
-                  key={p.performanceId}
-                  className="p-2.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between"
-                >
-                  <div className="flex items-center gap-3 truncate">
-                    <span className="font-extrabold font-mono text-xs w-5 text-center text-white/50">
-                      #{idx + 1}
-                    </span>
-                    <div className="truncate">
-                      <div className="fx-display font-bold text-xs text-white truncate">{p.name}</div>
-                      <div className="text-[10px] text-white/40">{p.teamName}</div>
+              topScorers.map((p, idx) => {
+                const logoUrl = getTeamLogoUrl(p.teamId, p.teamName);
+                return (
+                  <div
+                    key={p.performanceId}
+                    className="p-2.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between"
+                  >
+                    <div className="flex items-center gap-3 truncate">
+                      <span className="font-extrabold font-mono text-xs w-5 text-center text-white/50">
+                        #{idx + 1}
+                      </span>
+                      {logoUrl && (
+                        <img
+                          src={logoUrl}
+                          alt=""
+                          className="w-5 h-5 object-contain shrink-0"
+                        />
+                      )}
+                      <div className="truncate">
+                        <div className="fx-display font-bold text-xs text-white truncate">{p.name}</div>
+                        <div className="text-[10px] text-white/40">{p.teamName}</div>
+                      </div>
+                    </div>
+                    <div className="text-sm font-black font-mono text-amber-400 shrink-0">
+                      {p.goals} goals
                     </div>
                   </div>
-                  <div className="text-sm font-black font-mono text-amber-400 shrink-0">
-                    {p.goals} goals
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
         </div>
@@ -197,25 +236,35 @@ export const LaligaAwardsView: React.FC<LaligaAwardsViewProps> = ({ state }) => 
             {topAssisters.length === 0 ? (
               <p className="text-xs text-white/40 py-4 font-mono text-center">No assists recorded yet.</p>
             ) : (
-              topAssisters.map((p, idx) => (
-                <div
-                  key={p.performanceId}
-                  className="p-2.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between"
-                >
-                  <div className="flex items-center gap-3 truncate">
-                    <span className="font-extrabold font-mono text-xs w-5 text-center text-white/50">
-                      #{idx + 1}
-                    </span>
-                    <div className="truncate">
-                      <div className="fx-display font-bold text-xs text-white truncate">{p.name}</div>
-                      <div className="text-[10px] text-white/40">{p.teamName}</div>
+              topAssisters.map((p, idx) => {
+                const logoUrl = getTeamLogoUrl(p.teamId, p.teamName);
+                return (
+                  <div
+                    key={p.performanceId}
+                    className="p-2.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between"
+                  >
+                    <div className="flex items-center gap-3 truncate">
+                      <span className="font-extrabold font-mono text-xs w-5 text-center text-white/50">
+                        #{idx + 1}
+                      </span>
+                      {logoUrl && (
+                        <img
+                          src={logoUrl}
+                          alt=""
+                          className="w-5 h-5 object-contain shrink-0"
+                        />
+                      )}
+                      <div className="truncate">
+                        <div className="fx-display font-bold text-xs text-white truncate">{p.name}</div>
+                        <div className="text-[10px] text-white/40">{p.teamName}</div>
+                      </div>
+                    </div>
+                    <div className="text-sm font-black font-mono text-cyan-400 shrink-0">
+                      {p.assists} assists
                     </div>
                   </div>
-                  <div className="text-sm font-black font-mono text-cyan-400 shrink-0">
-                    {p.assists} assists
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
         </div>

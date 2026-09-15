@@ -1,6 +1,7 @@
 import React from 'react';
 import { TournamentState } from '../../types/football';
 import { calculateLiveAwardRankings } from '../../engine/tournamentSimulator';
+import { getTeamLogoUrl } from '../../utils/teamLogos';
 import { Trophy, Flame, Award, Shield } from 'lucide-react';
 
 interface LiveLeaderboardViewProps {
@@ -46,31 +47,38 @@ export const LiveLeaderboardView: React.FC<LiveLeaderboardViewProps> = ({ state 
             {topGoldenBall.length === 0 ? (
               <p className="text-xs text-white/40 text-center py-4">No match data recorded yet.</p>
             ) : (
-              topGoldenBall.map((p, idx) => (
-                <div
-                  key={p.performanceId}
-                  className={`flex items-center justify-between p-2.5 rounded border transition-all ${
-                    idx === 0
-                      ? 'bg-purple-500/10 border-purple-500/40 text-white'
-                      : 'bg-white/5 border-white/10 text-white/80'
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5 overflow-hidden">
-                    <span className="fx-display font-extrabold text-xs w-4 text-white/40">{idx + 1}.</span>
-                    <span className="text-sm">{p.flag}</span>
-                    <div className="truncate">
-                      <div className="fx-display font-bold text-xs truncate">{p.name}</div>
-                      <div className="text-[10px] text-white/40 font-mono truncate">{p.teamName}</div>
+              topGoldenBall.map((p, idx) => {
+                const logoUrl = getTeamLogoUrl(p.teamId || p.nationality, p.teamName);
+                return (
+                  <div
+                    key={p.performanceId}
+                    className={`flex items-center justify-between p-2.5 rounded border transition-all ${
+                      idx === 0
+                        ? 'bg-purple-500/10 border-purple-500/40 text-white'
+                        : 'bg-white/5 border-white/10 text-white/80'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5 overflow-hidden">
+                      <span className="fx-display font-extrabold text-xs w-4 text-white/40">{idx + 1}.</span>
+                      {logoUrl ? (
+                        <img src={logoUrl} alt="" className="w-6 h-4 rounded shadow-sm object-cover shrink-0" />
+                      ) : (
+                        <span className="text-sm">{p.flag}</span>
+                      )}
+                      <div className="truncate">
+                        <div className="fx-display font-bold text-xs truncate">{p.name}</div>
+                        <div className="text-[10px] text-white/40 font-mono truncate">{p.teamName}</div>
+                      </div>
+                    </div>
+                    <div className="text-right font-mono">
+                      <span className="fx-display font-extrabold text-sm text-purple-400">
+                        {p.ratingAverage.toFixed(2)}
+                      </span>
+                      <div className="text-[9px] text-white/40">{p.matchesPlayed} games</div>
                     </div>
                   </div>
-                  <div className="text-right font-mono">
-                    <span className="fx-display font-extrabold text-sm text-purple-400">
-                      {p.ratingAverage.toFixed(2)}
-                    </span>
-                    <div className="text-[9px] text-white/40">{p.matchesPlayed} games</div>
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
         </div>
@@ -88,31 +96,38 @@ export const LiveLeaderboardView: React.FC<LiveLeaderboardViewProps> = ({ state 
             {topGoldenBoot.length === 0 ? (
               <p className="text-xs text-white/40 text-center py-4">No goals recorded yet.</p>
             ) : (
-              topGoldenBoot.map((p, idx) => (
-                <div
-                  key={p.performanceId}
-                  className={`flex items-center justify-between p-2.5 rounded border transition-all ${
-                    idx === 0
-                      ? 'bg-[#F2B705]/10 border-[#F2B705]/40 text-white'
-                      : 'bg-white/5 border-white/10 text-white/80'
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5 overflow-hidden">
-                    <span className="fx-display font-extrabold text-xs w-4 text-white/40">{idx + 1}.</span>
-                    <span className="text-sm">{p.flag}</span>
-                    <div className="truncate">
-                      <div className="fx-display font-bold text-xs truncate">{p.name}</div>
-                      <div className="text-[10px] text-white/40 font-mono truncate">{p.teamName}</div>
+              topGoldenBoot.map((p, idx) => {
+                const logoUrl = getTeamLogoUrl(p.teamId || p.nationality, p.teamName);
+                return (
+                  <div
+                    key={p.performanceId}
+                    className={`flex items-center justify-between p-2.5 rounded border transition-all ${
+                      idx === 0
+                        ? 'bg-[#F2B705]/10 border-[#F2B705]/40 text-white'
+                        : 'bg-white/5 border-white/10 text-white/80'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5 overflow-hidden">
+                      <span className="fx-display font-extrabold text-xs w-4 text-white/40">{idx + 1}.</span>
+                      {logoUrl ? (
+                        <img src={logoUrl} alt="" className="w-6 h-4 rounded shadow-sm object-cover shrink-0" />
+                      ) : (
+                        <span className="text-sm">{p.flag}</span>
+                      )}
+                      <div className="truncate">
+                        <div className="fx-display font-bold text-xs truncate">{p.name}</div>
+                        <div className="text-[10px] text-white/40 font-mono truncate">{p.teamName}</div>
+                      </div>
+                    </div>
+                    <div className="text-right font-mono">
+                      <span className="fx-display font-extrabold text-base" style={{ color: GOLD }}>
+                        {p.goals} <span className="text-[10px] font-normal text-white/40">GOALS</span>
+                      </span>
+                      <div className="text-[9px] text-white/40">{p.assists} assists</div>
                     </div>
                   </div>
-                  <div className="text-right font-mono">
-                    <span className="fx-display font-extrabold text-base" style={{ color: GOLD }}>
-                      {p.goals} <span className="text-[10px] font-normal text-white/40">GOALS</span>
-                    </span>
-                    <div className="text-[9px] text-white/40">{p.assists} assists</div>
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
         </div>
@@ -130,31 +145,38 @@ export const LiveLeaderboardView: React.FC<LiveLeaderboardViewProps> = ({ state 
             {topGoldenGlove.length === 0 ? (
               <p className="text-xs text-white/40 text-center py-4">No goalkeeper data recorded yet.</p>
             ) : (
-              topGoldenGlove.map((p, idx) => (
-                <div
-                  key={p.performanceId}
-                  className={`flex items-center justify-between p-2.5 rounded border transition-all ${
-                    idx === 0
-                      ? 'bg-[#C9F31D]/10 border-[#C9F31D]/40 text-white'
-                      : 'bg-white/5 border-white/10 text-white/80'
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5 overflow-hidden">
-                    <span className="fx-display font-extrabold text-xs w-4 text-white/40">{idx + 1}.</span>
-                    <span className="text-sm">{p.flag}</span>
-                    <div className="truncate">
-                      <div className="fx-display font-bold text-xs truncate">{p.name}</div>
-                      <div className="text-[10px] text-white/40 font-mono truncate">{p.teamName}</div>
+              topGoldenGlove.map((p, idx) => {
+                const logoUrl = getTeamLogoUrl(p.teamId || p.nationality, p.teamName);
+                return (
+                  <div
+                    key={p.performanceId}
+                    className={`flex items-center justify-between p-2.5 rounded border transition-all ${
+                      idx === 0
+                        ? 'bg-[#C9F31D]/10 border-[#C9F31D]/40 text-white'
+                        : 'bg-white/5 border-white/10 text-white/80'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5 overflow-hidden">
+                      <span className="fx-display font-extrabold text-xs w-4 text-white/40">{idx + 1}.</span>
+                      {logoUrl ? (
+                        <img src={logoUrl} alt="" className="w-6 h-4 rounded shadow-sm object-cover shrink-0" />
+                      ) : (
+                        <span className="text-sm">{p.flag}</span>
+                      )}
+                      <div className="truncate">
+                        <div className="fx-display font-bold text-xs truncate">{p.name}</div>
+                        <div className="text-[10px] text-white/40 font-mono truncate">{p.teamName}</div>
+                      </div>
+                    </div>
+                    <div className="text-right font-mono">
+                      <span className="fx-display font-extrabold text-base" style={{ color: ACCENT }}>
+                        {p.cleanSheets} <span className="text-[10px] font-normal text-white/40">CLEAN</span>
+                      </span>
+                      <div className="text-[9px] text-white/40">{p.saves} saves</div>
                     </div>
                   </div>
-                  <div className="text-right font-mono">
-                    <span className="fx-display font-extrabold text-base" style={{ color: ACCENT }}>
-                      {p.cleanSheets} <span className="text-[10px] font-normal text-white/40">CLEAN</span>
-                    </span>
-                    <div className="text-[9px] text-white/40">{p.saves} saves</div>
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
         </div>

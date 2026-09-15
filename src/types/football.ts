@@ -279,6 +279,7 @@ export interface TournamentPlayerStats {
   flag: string;
   position: Position;
   overall: number;
+  teamId?: string;
   teamName: string;
   matchesPlayed: number;
   minutesPlayed: number;
