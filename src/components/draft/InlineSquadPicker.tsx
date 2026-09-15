@@ -42,7 +42,7 @@ export const InlineSquadPicker: React.FC<InlineSquadPickerProps> = ({
         {hasLegendPlayer && (
           <span className="text-[10px] fx-display font-bold text-[#F2B705] flex items-center gap-1 bg-[#F2B705]/10 px-2 py-0.5 rounded border border-[#F2B705]/25">
             <Crown className="w-3 h-3 fill-[#F2B705]" />
-            <span>Gold = Legend</span>
+            <span>Gold = 88+ OVR</span>
           </span>
         )}
       </div>

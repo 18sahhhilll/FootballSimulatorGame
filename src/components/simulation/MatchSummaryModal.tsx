@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Match } from '../../types/football';
 import { X, Award, Shield, Target, Flame, Activity, Clock } from 'lucide-react';
 
+import { CompletedMatchCard } from './CompletedMatchCard';
+
 interface MatchSummaryModalProps {
   isOpen: boolean;
   match: Match | null;
@@ -58,42 +60,14 @@ export const MatchSummaryModal: React.FC<MatchSummaryModalProps> = ({
           </span>
           <button
             onClick={onClose}
-            className="p-1.5 text-white/50 hover:text-white"
+            className="p-1.5 text-white/50 hover:text-white cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Scoreboard HUD */}
-        <div className="my-4 p-5 fx-panel border border-white/10 flex items-center justify-between bg-white/5">
-          <div className="flex flex-col items-center gap-2 flex-1">
-            <span className="text-4xl">{match.homeTeamFlag}</span>
-            <span className={`fx-display font-extrabold text-base text-center ${match.isUserHome ? 'text-[#C9F31D]' : 'text-white'}`}>
-              {match.homeTeamName}
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center justify-center px-6 text-center">
-            <div className="fx-display font-extrabold text-4xl tracking-wider" style={{ color: ACCENT }}>
-              {match.homeScore} - {match.awayScore}
-            </div>
-            {match.homePenalties !== undefined && match.awayPenalties !== undefined && (
-              <span className="text-xs font-mono font-bold text-white/70 mt-1">
-                ({match.homePenalties} - {match.awayPenalties} pens)
-              </span>
-            )}
-            <span className="mt-2 px-3 py-0.5 rounded bg-white/10 text-white/80 font-mono text-xs fx-display font-bold">
-              FULL TIME
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center gap-2 flex-1">
-            <span className="text-4xl">{match.awayTeamFlag}</span>
-            <span className={`fx-display font-extrabold text-base text-center ${match.isUserAway ? 'text-[#C9F31D]' : 'text-white'}`}>
-              {match.awayTeamName}
-            </span>
-          </div>
-        </div>
+        {/* Scorecard Component */}
+        <CompletedMatchCard match={match} stageName={match.stage} className="my-4" />
 
         {/* MOTM Banner */}
         {motm && (

@@ -3,6 +3,7 @@ import { UserSquad } from './types/football';
 import { HomePage } from './pages/HomePage';
 import { DraftPage } from './pages/DraftPage';
 import { TournamentPage } from './pages/TournamentPage';
+import { LaligaPage } from './pages/LaligaPage';
 import { 
   loadUserSquadFromStorage, 
   saveUserSquadToStorage, 
@@ -12,12 +13,12 @@ import {
 } from './utils/storage';
 import { Trophy, Shuffle, Globe } from 'lucide-react';
 
-type PageState = 'HOME' | 'DRAFT' | 'TOURNAMENT';
+type PageState = 'HOME' | 'DRAFT' | 'TOURNAMENT' | 'LALIGA';
 
 export function App() {
   const [currentPage, setCurrentPage] = useState<PageState>(() => {
     const savedPage = loadCurrentPageFromStorage();
-    if (savedPage === 'TOURNAMENT' || savedPage === 'DRAFT' || savedPage === 'HOME') {
+    if (savedPage === 'LALIGA' || savedPage === 'TOURNAMENT' || savedPage === 'DRAFT' || savedPage === 'HOME') {
       return savedPage as PageState;
     }
     return 'HOME';
@@ -45,7 +46,11 @@ export function App() {
 
   const handleCompleteDraft = (squad: UserSquad) => {
     setUserSquad(squad);
-    setCurrentPage('TOURNAMENT');
+    if (squad.editionId === 'la-liga-mode') {
+      setCurrentPage('LALIGA');
+    } else {
+      setCurrentPage('TOURNAMENT');
+    }
   };
 
   const handleRestartGame = () => {
@@ -108,6 +113,12 @@ export function App() {
         )}
         {currentPage === 'TOURNAMENT' && userSquad && (
           <TournamentPage
+            userSquad={userSquad}
+            onRestart={handleRestartGame}
+          />
+        )}
+        {currentPage === 'LALIGA' && userSquad && (
+          <LaligaPage
             userSquad={userSquad}
             onRestart={handleRestartGame}
           />

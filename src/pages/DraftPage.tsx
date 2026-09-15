@@ -453,14 +453,13 @@ export const DraftPage: React.FC<DraftPageProps> = ({
                 Drawn
               </div>
               <div className="text-xs fx-display font-bold text-white uppercase tracking-wider mb-0.5 flex items-center gap-2">
-                <span className="text-lg sm:text-xl">{spunTeam.flag}</span>
                 <span>{spunTeam.teamId.toUpperCase()}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl fx-display font-black text-white tracking-tight uppercase leading-none mb-1 sm:mb-2">
                 {spunTeam.teamName}
               </h2>
               <div className="text-lg sm:text-xl fx-display font-extrabold tracking-tight" style={{ color: ACCENT }}>
-                World Cup {spunTeam.year}
+                {editionId === 'la-liga-mode' ? `LaLiga ${spunTeam.year}` : `World Cup ${spunTeam.year}`}
               </div>
 
               {/* ORTHOGONAL REROLL CONTROLS */}
@@ -471,19 +470,19 @@ export const DraftPage: React.FC<DraftPageProps> = ({
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     onClick={handleRerollCountry}
-                    disabled={rerollsLeft <= 0 || isSpinning}
+                    disabled={rerollsLeft <= 0 || isSpinning || editionId === 'la-liga-mode'}
                     className="py-2 px-2 fx-btn bg-white/10 border border-white/20 text-[10px] sm:text-[11px] font-bold text-white hover:bg-white/20 disabled:opacity-40 uppercase transition-all"
-                    title="Same World Cup, Different Country"
+                    title={editionId === 'la-liga-mode' ? 'Reroll not available in La Liga mode' : 'Same season, different team'}
                   >
-                    Another Country
+                    Another Team
                   </button>
                   <button
                     onClick={handleRerollWorldCup}
-                    disabled={rerollsLeft <= 0 || isSpinning}
+                    disabled={rerollsLeft <= 0 || isSpinning || editionId === 'la-liga-mode'}
                     className="py-2 px-2 fx-btn bg-white/10 border border-white/20 text-[10px] sm:text-[11px] font-bold text-white hover:bg-white/20 disabled:opacity-40 uppercase transition-all"
-                    title="Same Country, Different World Cup"
+                    title={editionId === 'la-liga-mode' ? 'Reroll not available in La Liga mode' : 'Same team, different season'}
                   >
-                    Another World Cup
+                    Another Season
                   </button>
                 </div>
               </div>

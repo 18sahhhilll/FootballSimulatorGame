@@ -14,6 +14,8 @@ export interface SimulatedTeamStats {
   id: string;
   name: string;
   flag: string;
+  managerName?: string;
+  formation?: string;
   attack: number;
   midfield: number;
   defense: number;
@@ -31,7 +33,9 @@ export function getUserTeamStats(userSquad: UserSquad): SimulatedTeamStats {
   return {
     id: 'user-xi',
     name: userSquad.userTeamName || 'YOUR XI',
-    flag: userSquad.userTeamFlag || '⭐',
+    flag: userSquad.userTeamFlag || '',
+    managerName: 'User Manager',
+    formation: userSquad.formation,
     attack: userSquad.attack,
     midfield: userSquad.midfield,
     defense: userSquad.defense,
@@ -42,7 +46,7 @@ export function getUserTeamStats(userSquad: UserSquad): SimulatedTeamStats {
   };
 }
 
-export function calcEffectiveStrength(stats: SimulatedTeamStats, redCards: number = 0): number {
+export function calcEffectiveStrength(stats: SimulatedTeamStats, redCards: number = 0, isHome: boolean = false): number {
   // Base rating = Overall (60%) + Attack (20%) + Defense (20%)
   const baseRating = stats.overall * 0.60 + stats.attack * 0.20 + stats.defense * 0.20;
   
@@ -50,6 +54,11 @@ export function calcEffectiveStrength(stats: SimulatedTeamStats, redCards: numbe
   const chemMultiplier = 0.85 + (stats.chemistry / 100) * 0.25;
 
   let strength = baseRating * chemMultiplier;
+
+  // Home advantage: +4% boost to effective strength
+  if (isHome) {
+    strength *= 1.04;
+  }
 
   // Red card penalty: 15% reduction per red card
   if (redCards > 0) {
@@ -139,8 +148,8 @@ export function simulateMatch(
   initPlayerStats(awayStats);
 
   // Calculate Possession split
-  const homeStrInitial = calcEffectiveStrength(homeStats);
-  const awayStrInitial = calcEffectiveStrength(awayStats);
+  const homeStrInitial = calcEffectiveStrength(homeStats, 0, true);
+  const awayStrInitial = calcEffectiveStrength(awayStats, 0, false);
   const homeMid = homeStats.midfield * 0.5 + homeStrInitial * 0.5;
   const awayMid = awayStats.midfield * 0.5 + awayStrInitial * 0.5;
   const totMid = homeMid + awayMid;
@@ -214,8 +223,8 @@ export function simulateMatch(
   // Helper to simulate a period of play (e.g. 1-45, 46-90, 91-105, 106-120)
   const simulateMinutes = (startMin: number, endMin: number, period: '1H' | '2H' | 'ET1' | 'ET2') => {
     for (let m = startMin; m <= endMin; m++) {
-      const homeStr = calcEffectiveStrength(homeStats, homeRedCards);
-      const awayStr = calcEffectiveStrength(awayStats, awayRedCards);
+      const homeStr = calcEffectiveStrength(homeStats, homeRedCards, true);
+      const awayStr = calcEffectiveStrength(awayStats, awayRedCards, false);
 
       // Determine if a major event occurs this minute (approx ~25-30% chance per minute)
       const chanceProbability = 0.28;

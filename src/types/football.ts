@@ -86,7 +86,7 @@ export interface HistoricalTeamEdition {
   squad: PlayerEditionPerformance[];
 }
 
-export type FormationId = '4-3-3' | '4-2-3-1' | '4-4-2' | '3-5-2' | '3-4-3' | '4-1-2-1-2';
+export type FormationId = '4-3-3' | '4-2-3-1' | '4-4-2' | '3-5-2' | '3-4-3' | '4-1-2-1-2' | '5-3-2' | '5-4-1' | '4-1-4-1' | '4-2-2-2';
 
 export interface FormationSlotConfig {
   id: string; // e.g. "gk-1", "lb-1", "cb-1", "cb-2", "st-1"
@@ -326,4 +326,57 @@ export interface TournamentState {
   userSquad: UserSquad;
   stats: Map<string, TournamentPlayerStats>;
   history: Match[]; // Complete tournament match history
+}
+
+export interface LaligaTableEntry {
+  rank: number;
+  teamId: string;
+  teamName: string;
+  teamFlag: string;
+  managerName?: string;
+  formation?: FormationId;
+  isUserTeam?: boolean;
+  played: number;
+  won: number;
+  drawn: number;
+  lost: number;
+  gf: number;
+  ga: number;
+  gd: number;
+  points: number;
+  yellowCards: number;
+  redCards: number;
+  fairPlayPoints: number; // Yellow = 1, Red = 3
+  form: ('W' | 'D' | 'L')[];
+  zone?: 'CHAMPIONS_LEAGUE' | 'EUROPA_LEAGUE' | 'CONFERENCE_LEAGUE' | 'NONE' | 'RELEGATION';
+}
+
+export interface LaligaFixture extends Match {
+  matchday: number; // 1 to 38
+}
+
+export interface LaligaMatchday {
+  matchdayNumber: number;
+  matches: LaligaFixture[];
+  completed: boolean;
+}
+
+export interface LaligaAwards {
+  pichichi?: TournamentPlayerStats;
+  topAssists?: TournamentPlayerStats;
+  zamora?: TournamentPlayerStats;
+  playerOfSeason?: TournamentPlayerStats;
+}
+
+export interface LaligaState {
+  seasonId: string; // e.g. '2026-27'
+  userTeamId: string;
+  userSquad: UserSquad;
+  matchdays: LaligaMatchday[];
+  currentMatchdayIndex: number; // 0-indexed (0 to 37)
+  table: LaligaTableEntry[];
+  stats: Map<string, TournamentPlayerStats>;
+  history: LaligaFixture[];
+  suspendedPlayerIds?: Record<string, number>; // playerId -> matchday number until which suspended (inclusive)
+  isCompleted: boolean;
 }

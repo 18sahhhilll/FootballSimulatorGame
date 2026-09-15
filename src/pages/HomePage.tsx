@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { COMPETITION_EDITIONS } from '../data/editions';
+import { LaligaSeasonSelectModal } from '../components/laliga/LaligaSeasonSelectModal';
 import { ChevronRight } from 'lucide-react';
 
 interface HomePageProps {
@@ -8,6 +9,21 @@ interface HomePageProps {
 
 export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
   const ACCENT = '#C9F31D';
+  const [isLaligaModalOpen, setIsLaligaModalOpen] = useState(false);
+  const [selectedSeason, setSelectedSeason] = useState('2026-27');
+
+  const handleCardClick = (editionId: string) => {
+    if (editionId === 'la-liga-mode') {
+      setIsLaligaModalOpen(true);
+    } else {
+      onSelectEdition(editionId);
+    }
+  };
+
+  const handleConfirmLaliga = () => {
+    setIsLaligaModalOpen(false);
+    onSelectEdition('la-liga-mode');
+  };
 
   return (
     <div className="min-h-screen fx-turf fx-vignette flex flex-col justify-between">
@@ -21,15 +37,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
           Spin your way to glory.
         </h1>
         <p className="text-white/60 mt-5 max-w-md text-base leading-relaxed">
-          Choose a competition mode, pick your formation, spin historical team roulette, and build a legendary fantasy XI to conquer the tournament.
+          Choose a competition mode, pick your formation, spin historical team roulette, and build a legendary fantasy XI to conquer the tournament or league.
         </p>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap items-center gap-3">
           <button
             onClick={() => onSelectEdition('world-cup-mode')}
             className="fx-btn px-8 py-4 text-black flex items-center gap-2 text-lg"
             style={{ background: ACCENT }}
           >
-            START BUILDING <ChevronRight size={20} />
+            WORLD CUP DRAFT <ChevronRight size={20} />
+          </button>
+
+          <button
+            onClick={() => setIsLaligaModalOpen(true)}
+            className="fx-btn px-8 py-4 text-white bg-white/10 hover:bg-white/20 border border-white/20 flex items-center gap-2 text-lg"
+          >
+            LALIGA LEAGUE <ChevronRight size={20} />
           </button>
         </div>
       </div>
@@ -40,7 +63,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
           {COMPETITION_EDITIONS.map(e => (
             <div
               key={e.id}
-              onClick={() => e.isAvailable && onSelectEdition(e.id)}
+              onClick={() => e.isAvailable && handleCardClick(e.id)}
               className={`fx-panel p-4 flex flex-col justify-between ${
                 !e.isAvailable ? 'opacity-40 cursor-not-allowed' : 'hover:brightness-110 cursor-pointer'
               }`}
@@ -57,6 +80,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
           ))}
         </div>
       </div>
+
+      <LaligaSeasonSelectModal
+        isOpen={isLaligaModalOpen}
+        availableSeasons={['2026-27']}
+        selectedSeason={selectedSeason}
+        onSelectSeason={setSelectedSeason}
+        onConfirm={handleConfirmLaliga}
+        onClose={() => setIsLaligaModalOpen(false)}
+      />
     </div>
   );
 };

@@ -89,6 +89,58 @@ export const FORMATION_CONFIGS: Record<FormationId, FormationSlotConfig[]> = {
     { id: 'st-1', position: 'ST', label: 'LST', x: 38, y: 16 },
     { id: 'st-2', position: 'ST', label: 'RST', x: 62, y: 16 },
   ],
+  '5-3-2': [
+    { id: 'gk-1', position: 'GK', label: 'GK', x: 50, y: 88 },
+    { id: 'lwb-1', position: 'LWB', label: 'LWB', x: 15, y: 60 },
+    { id: 'cb-1', position: 'CB', label: 'LCB', x: 32, y: 72 },
+    { id: 'cb-2', position: 'CB', label: 'CCB', x: 50, y: 74 },
+    { id: 'cb-3', position: 'CB', label: 'RCB', x: 68, y: 72 },
+    { id: 'rwb-1', position: 'RWB', label: 'RWB', x: 85, y: 60 },
+    { id: 'cm-1', position: 'CM', label: 'LCM', x: 32, y: 44 },
+    { id: 'cm-2', position: 'CM', label: 'CM', x: 50, y: 46 },
+    { id: 'cm-3', position: 'CM', label: 'RCM', x: 68, y: 44 },
+    { id: 'st-1', position: 'ST', label: 'LST', x: 38, y: 18 },
+    { id: 'st-2', position: 'ST', label: 'RST', x: 62, y: 18 },
+  ],
+  '5-4-1': [
+    { id: 'gk-1', position: 'GK', label: 'GK', x: 50, y: 88 },
+    { id: 'lwb-1', position: 'LWB', label: 'LWB', x: 15, y: 60 },
+    { id: 'cb-1', position: 'CB', label: 'LCB', x: 32, y: 72 },
+    { id: 'cb-2', position: 'CB', label: 'CCB', x: 50, y: 74 },
+    { id: 'cb-3', position: 'CB', label: 'RCB', x: 68, y: 72 },
+    { id: 'rwb-1', position: 'RWB', label: 'RWB', x: 85, y: 60 },
+    { id: 'lm-1', position: 'LM', label: 'LM', x: 20, y: 42 },
+    { id: 'cm-1', position: 'CM', label: 'LCM', x: 40, y: 45 },
+    { id: 'cm-2', position: 'CM', label: 'RCM', x: 60, y: 45 },
+    { id: 'rm-1', position: 'RM', label: 'RM', x: 80, y: 42 },
+    { id: 'st-1', position: 'ST', label: 'ST', x: 50, y: 18 },
+  ],
+  '4-1-4-1': [
+    { id: 'gk-1', position: 'GK', label: 'GK', x: 50, y: 88 },
+    { id: 'lb-1', position: 'LB', label: 'LB', x: 18, y: 70 },
+    { id: 'cb-1', position: 'CB', label: 'LCB', x: 38, y: 72 },
+    { id: 'cb-2', position: 'CB', label: 'RCB', x: 62, y: 72 },
+    { id: 'rb-1', position: 'RB', label: 'RB', x: 82, y: 70 },
+    { id: 'cdm-1', position: 'CDM', label: 'CDM', x: 50, y: 56 },
+    { id: 'lm-1', position: 'LM', label: 'LM', x: 20, y: 36 },
+    { id: 'cm-1', position: 'CM', label: 'LCM', x: 40, y: 38 },
+    { id: 'cm-2', position: 'CM', label: 'RCM', x: 60, y: 38 },
+    { id: 'rm-1', position: 'RM', label: 'RM', x: 80, y: 36 },
+    { id: 'st-1', position: 'ST', label: 'ST', x: 50, y: 16 },
+  ],
+  '4-2-2-2': [
+    { id: 'gk-1', position: 'GK', label: 'GK', x: 50, y: 88 },
+    { id: 'lb-1', position: 'LB', label: 'LB', x: 18, y: 70 },
+    { id: 'cb-1', position: 'CB', label: 'LCB', x: 38, y: 72 },
+    { id: 'cb-2', position: 'CB', label: 'RCB', x: 62, y: 72 },
+    { id: 'rb-1', position: 'RB', label: 'RB', x: 82, y: 70 },
+    { id: 'cdm-1', position: 'CDM', label: 'LDM', x: 38, y: 54 },
+    { id: 'cdm-2', position: 'CDM', label: 'RDM', x: 62, y: 54 },
+    { id: 'cam-1', position: 'CAM', label: 'LAM', x: 30, y: 36 },
+    { id: 'cam-2', position: 'CAM', label: 'RAM', x: 70, y: 36 },
+    { id: 'st-1', position: 'ST', label: 'LST', x: 38, y: 18 },
+    { id: 'st-2', position: 'ST', label: 'RST', x: 62, y: 18 },
+  ],
 };
 
 // Position Compatibility Evaluator
@@ -181,13 +233,15 @@ export function findBestSlotForPlayer(
   return compatibleSlot || null;
 }
 
-// Automatically construct the strongest Playing XI from a squad for opponent teams
+// Automatically construct the strongest Playing XI from a squad for opponent teams (excluding suspended players)
 export function buildBestPlayingXI(
   teamEdition: HistoricalTeamEdition,
-  formation: FormationId = '4-3-3'
+  formation: FormationId = '4-3-3',
+  excludedPlayerIds?: Set<string>
 ): DraftSlot[] {
   const configs = FORMATION_CONFIGS[formation] || FORMATION_CONFIGS['4-3-3'];
-  const remainingSquad = [...teamEdition.squad].sort((a, b) => b.overall - a.overall);
+  const availableSquad = teamEdition.squad.filter(p => !excludedPlayerIds || !excludedPlayerIds.has(p.id));
+  const remainingSquad = [...availableSquad].sort((a, b) => b.overall - a.overall);
   const assignedPlayerIds = new Set<string>();
 
   const resultSlots: DraftSlot[] = configs.map(cfg => ({

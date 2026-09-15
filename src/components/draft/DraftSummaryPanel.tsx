@@ -124,7 +124,7 @@ export const DraftSummaryPanel: React.FC<DraftSummaryPanelProps> = ({
         }`}
         style={{ background: isComplete ? ACCENT : undefined }}
       >
-        {isComplete ? 'Simulate World Cup' : 'Fill All 11 Slots'}
+        {isComplete ? 'SIMULATE' : 'Fill All 11 Slots'}
       </button>
     </div>
   );
