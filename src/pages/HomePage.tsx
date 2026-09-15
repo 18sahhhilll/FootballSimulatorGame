@@ -75,18 +75,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectEdition }) => {
               }`}
             >
               <div>
-                {e.id === 'world-cup-mode' && getFifaLogoUrl() ? (
-                  <img src={getFifaLogoUrl()} alt="FIFA" className="h-8 object-contain mb-1" />
-                ) : e.id === 'la-liga-mode' && getLaligaLogoUrl() ? (
-                  <img src={getLaligaLogoUrl()} alt="LaLiga" className="w-8 h-8 object-contain mb-1" />
-                ) : e.id === 'premier-league-mode' && getPremierLeagueLogoUrl() ? (
-                  <img src={getPremierLeagueLogoUrl()} alt="Premier League" className="h-10 sm:h-12 object-contain mb-1 max-w-[160px] sm:max-w-[200px]" />
-                ) : e.id === 'champions-league-mode' && getUefaLogoUrl() ? (
-                  <img src={getUefaLogoUrl()} alt="UEFA Champions League" className="h-8 object-contain mb-1 rounded" />
-                ) : (
-                  <div className="text-3xl">{e.hostFlag}</div>
-                )}
-                <div className="fx-display font-extrabold text-xl mt-3">{e.name}</div>
+                <div className="h-10 flex items-center mb-1">
+                  {e.id === 'world-cup-mode' && getFifaLogoUrl() ? (
+                    <img src={getFifaLogoUrl()} alt="FIFA" className="h-8 max-h-full object-contain" />
+                  ) : e.id === 'la-liga-mode' && getLaligaLogoUrl() ? (
+                    <img src={getLaligaLogoUrl()} alt="LaLiga" className="h-8 max-h-full object-contain" />
+                  ) : e.id === 'premier-league-mode' && getPremierLeagueLogoUrl() ? (
+                    <img src={getPremierLeagueLogoUrl()} alt="Premier League" className="h-8 max-h-full object-contain max-w-[140px]" />
+                  ) : e.id === 'champions-league-mode' && getUefaLogoUrl() ? (
+                    <img src={getUefaLogoUrl()} alt="UEFA Champions League" className="h-8 max-h-full object-contain rounded" />
+                  ) : (
+                    <div className="text-3xl">{e.hostFlag}</div>
+                  )}
+                </div>
+                <div className="fx-display font-extrabold text-xl mt-2">{e.name}</div>
                 <p className="text-xs text-white/50 mt-1 line-clamp-2">{e.description}</p>
               </div>
               <div className="text-xs mt-4 fx-display font-bold" style={{ color: e.isAvailable ? ACCENT : 'rgba(255,255,255,0.4)' }}>
